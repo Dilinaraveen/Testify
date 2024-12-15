@@ -18,6 +18,6 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
-    "step_definitions": "cypress/support/step_definitions/uiSteps/src"
+    "step_definitions": "cypress/support/stepDefinitions/uiSteps/src"
   }
 }
