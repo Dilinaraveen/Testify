@@ -19,8 +19,5 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "step_definitions": "cypress/support/step_definitions/uiSteps/src"
-  },
-  "dependencies": {
-    "resolve": "^1.22.9"
   }
 }
