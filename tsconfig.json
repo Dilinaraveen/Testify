@@ -5,7 +5,8 @@
     "lib": ["es6", "dom"],
     "types": ["cypress"],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "./"
   },
   "include": [
     "cypress/**/*.ts"

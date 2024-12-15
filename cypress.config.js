@@ -1,4 +1,6 @@
 const { defineConfig } = require("cypress");
+const cucumber = require("cypress-cucumber-preprocessor").default;
+const browserify = require('@cypress/browserify-preprocessor');
 const fs = require('fs');
 const path = require('path');
 
@@ -25,8 +27,11 @@ module.exports = defineConfig({
     screenshotOnRunFailure: false,
     supportFile: 'cypress/support/e2e.js',
     setupNodeEvents(on, config) {
+      const options = browserify.defaultOptions;
+      options.typescript = require.resolve('typescript');
+      on('file:preprocessor', cucumber(options));
     },
-    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    specPattern: 'cypress/e2e/uiTests/**/*.feature',
     baseUrl: envConfig.BASE_URL,
     env: envConfig,
   }
