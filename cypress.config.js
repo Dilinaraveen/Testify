@@ -31,6 +31,13 @@ module.exports = defineConfig({
       options.typescript = require.resolve('typescript');
       on('file:preprocessor', cucumber(options));
     },
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: false,
+      json: true,
+    },
     specPattern: 'cypress/e2e/uiTests/**/*.feature',
     baseUrl: envConfig.BASE_URL,
     env: envConfig,
