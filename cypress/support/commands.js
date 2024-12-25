@@ -1,8 +1,8 @@
-const USERNAME_INPUT = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+const USERNAME_INPUT = '#username';
 
-const PASSWORD_INPUT = ':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input';
+const PASSWORD_INPUT = '#password'
 
-const LOGIN_BUTTON = '.oxd-button';
+const LOGIN_BUTTON = '#loginForm > .mb-8 > .btn';
 
 Cypress.Commands.add('loginAuth', (username, password) => {
     cy.session(
