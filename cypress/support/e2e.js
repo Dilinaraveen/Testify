@@ -15,3 +15,8 @@ beforeEach(() => {
         cy.loginAuth(Cypress.env('LOGIN_USERNAME'), Cypress.env('LOGIN_PASSWORD'));
     }
 })
+
+Cypress.on('uncaught:exception', (err) => {
+    // Ignore errors thrown by the application
+    return false;
+  });

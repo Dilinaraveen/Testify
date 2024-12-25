@@ -22,6 +22,8 @@ const envConfig = loadEnvConfigFile();
 module.exports = defineConfig({
   watchForFileChanges: false,
   defaultCommandTimeout: 8000,
+  viewportWidth: 1280,
+  viewportHeight: 720,
   e2e: {
     experimentalRunAllSpecs: true,
     screenshotOnRunFailure: false,
