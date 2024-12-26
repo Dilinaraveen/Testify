@@ -1,12 +1,12 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
 
-const USERNAME_INPUT = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+const USERNAME_INPUT = '#username';
 
-const PASSWORD_INPUT = ':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input'
+const PASSWORD_INPUT = '#password'
 
-const LOGIN_BUTTON = '.oxd-button';
+const LOGIN_BUTTON = '#loginForm > .mb-8 > .btn';
 
-const INVALID_CREDENTIAL_MSG = '.oxd-alert-content > .oxd-text';
+const LOGIN_FAILED_MSG = '#loginForm > .alert';
 
 Given('the user is on the login page', () => {
   cy.visit(Cypress.env('BASE_URL'));
@@ -22,5 +22,5 @@ When('clicks the login button', () => {
 });
 
 Then('the user should be seen invalid credential message', () => {
-  cy.get(INVALID_CREDENTIAL_MSG).should('contain', 'Invalid credentials');
+  cy.get(LOGIN_FAILED_MSG).should('contain', 'Login failed');
 });
