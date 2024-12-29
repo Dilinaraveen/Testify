@@ -6,3 +6,4 @@ export class GoogleHomePage {
         cy.get(this.SEARCH_BUTTON).should('contain', 'Google Search');
     }
 }
+
