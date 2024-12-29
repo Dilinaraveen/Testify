@@ -9,13 +9,13 @@ const TAB_CONTAINER = '#modTab';
 const LEAVE_TYPE_TAB = '#tabLeaveType';
 
 
-// Given the user is logged in and on the dashboard
+
 Given('the user is logged in and on the dashboard', () => {
   cy.visit(Cypress.env('BASE_URL'));
   cy.get(DASHBOARD_NAVIGATION_BAR).should('contain', 'Dashboard');
 });
 
-//When the user navigates to Manage > Leave
+
 When('the user navigates to Manage > Leave', () => {
 
   cy.get(MANAGE_MAIN_MENU).click(); 
@@ -25,7 +25,7 @@ When('the user navigates to Manage > Leave', () => {
   cy.get(LEAVE_SUB_MENU_ITEM).click();
 });
 
-// Then the user should see the Leave Types tab and the table
+
 Then('the user should see the Leave Types tab and the table', () => {
     
     cy.url().should('include', 'g=admin&n=leaves&m=admin_Manage');

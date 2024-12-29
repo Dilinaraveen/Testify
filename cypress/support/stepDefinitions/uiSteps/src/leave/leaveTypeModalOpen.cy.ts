@@ -12,7 +12,7 @@ Given('the user is logged in and on the Leave Types page', () => {
 });
 
 When('the user clicks on "Add New"', () => {
-    cy.get(ADD_NEW_BUTTON).click(); // Replace with the actual selector
+    cy.get(ADD_NEW_BUTTON).click();
 });
 
 Then('the "LeaveType" modal should open successfully', () => {
