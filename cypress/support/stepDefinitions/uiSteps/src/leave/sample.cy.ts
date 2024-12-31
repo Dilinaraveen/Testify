@@ -1,1 +1,1 @@
-const sample = ""
+const sample = "sample"
