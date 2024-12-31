@@ -8,9 +8,7 @@ Given('User log in as the user', () => {
 });
 
 // When('the user click on the Add New Button', () => {
-//   AttendenceObject.ClickonAddnewBtnInAttendence()
 // });
 
 // Then('the Add New pop up should be visible', () => {
-//   AttendenceObject.AttendeceAddNewPopUpVisible()
 // });
