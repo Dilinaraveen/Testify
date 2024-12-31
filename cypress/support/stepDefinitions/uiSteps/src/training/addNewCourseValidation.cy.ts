@@ -15,7 +15,6 @@ Then('the "Courses" modal opens', () => {
     cy.get('.ant-modal-content').should('be.visible');
 });
 
-
 When('the user clicks on the "Save" button without entering any information', () => {
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click();
 });
