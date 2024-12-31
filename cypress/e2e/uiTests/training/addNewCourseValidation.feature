@@ -1,0 +1,8 @@
+Feature: Add New Course Validation
+
+  Scenario: User attempts to add a new course without filling in required fields
+    Given the user is on the Training page
+    When the user clicks on the "Add New" button
+    And the "Courses" modal opens
+    And the user clicks on the "Save" button without entering any information
+    Then the error message "This field is required" should be displayed
