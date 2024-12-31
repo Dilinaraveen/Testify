@@ -1,1 +1,1 @@
-const sample = "sample - 1"
+const sample = "sampl - 1"
