@@ -62,7 +62,7 @@ jobs:
 
       - name: Comment on PR with test report summary
         if: env.has_content == 'true'
-        uses: marocchino/sticky-pull-request-comment@v3
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: test-report-summary.md
           recreate: true
