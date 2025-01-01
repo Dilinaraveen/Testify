@@ -52,6 +52,9 @@ jobs:
           echo "| **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
           echo "|-----------------|------------|------------|" >> test-report-summary.md
       
+          # Initialize a variable to track if any tests failed
+          echo "build_failed=false" >> $GITHUB_ENV
+
           # Loop through report files
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
@@ -62,7 +65,10 @@ jobs:
               passedTests=$(jq '.stats.passes' "$report_file")
               failedTests=$(jq '.stats.failures' "$report_file")
               
-              
+              # Check if there are any failed tests
+              if [ "$failedTests" -ne 0 ]; then
+                echo "build_failed=true" >> $GITHUB_ENV
+              fi
       
               # Append test results to the Markdown file
               echo "| $totalTests     | $passedTests | $failedTests |" >> test-report-summary.md
@@ -75,3 +81,9 @@ jobs:
         with:
           path: test-report-summary.md
           recreate: true
+
+      - name: Make build pass or fail or test results after creating the report
+        if: env.build_failed == 'true'
+        run: |
+          echo "Some tests failed. Failing the build."
+          exit 1
