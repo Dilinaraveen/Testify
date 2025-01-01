@@ -9,6 +9,9 @@ on:
 jobs:
   run-tests:
     name: Run Cypress Tests
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
