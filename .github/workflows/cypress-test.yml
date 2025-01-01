@@ -1,4 +1,4 @@
-name: Run Cypress Tests and Upload Report
+name: Pre merge checks cypress tests 
 
 on:
   pull_request:
