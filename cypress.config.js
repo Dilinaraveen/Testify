@@ -40,7 +40,7 @@ module.exports = defineConfig({
       html: false,
       json: true,
     },
-    specPattern: 'cypress/e2e/uiTests/**/*.feature',
+    specPattern: 'cypress/e2e/**/*.feature',
     baseUrl: envConfig.BASE_URL,
     env: envConfig,
   }
