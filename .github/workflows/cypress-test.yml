@@ -38,8 +38,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: setup
     steps:
+      - name: Print working directory
+        run: pwd
+        
       - name: Run Cypress tests
-        run: | 
+        run: 
           npm run test-headless
 
       - name: Upload Cypress test report
