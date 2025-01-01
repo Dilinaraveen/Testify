@@ -30,6 +30,7 @@ jobs:
     needs: setup
     steps:
       - name: Run Cypress tests
+        working-directory: Testify
         run: npm run test-headless
 
       - name: Upload Cypress test report
