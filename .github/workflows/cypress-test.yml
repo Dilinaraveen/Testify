@@ -14,7 +14,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: '1'
+          fetch-depth: 1
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
@@ -27,9 +27,6 @@ jobs:
       - name: Run Cypress tests
         run: npm run test-headless
 
-      - name: List Cypress Report Files
-        run: ls -l cypress/reports
-
       - name: Upload Cypress test report
         uses: actions/upload-artifact@v3
         with:
@@ -37,3 +34,35 @@ jobs:
           path: |
             cypress/reports/merged-report.html
             cypress/reports/assets/
+
+      - name: Extract test data from JSON files
+        id: extract-test-data
+        run: |
+          # Initialize the Markdown file for the report summary
+          echo "| **Project**         | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
+          echo "|---------------------|-----------------|------------|------------|" >> test-report-summary.md
+      
+          # Loop through report files
+          for report_file in ${REPORT_FILES}; do
+            if [ -f "$report_file" ]; then
+              echo "has_content=true" >> $GITHUB_ENV
+              
+              # Extract values from the JSON file using jq
+              totalTests=$(jq '.stats.tests' "$report_file")
+              passedTests=$(jq '.stats.passes' "$report_file")
+              failedTests=$(jq '.stats.failures' "$report_file")
+              
+              # Extract project name from the report file path
+              project_name=$(echo "$report_file" | awk -F'/' '{print $(NF-3)}')
+      
+              # Append test results to the Markdown file
+              echo "| $project_name       | $totalTests     | $passedTests | $failedTests |" >> test-report-summary.md
+            fi
+          done
+
+      - name: Comment on PR with test report summary
+        if: env.has_content == 'true'
+        uses: marocchino/sticky-pull-request-comment@v3
+        with:
+          path: test-report-summary.md
+          recreate: true
