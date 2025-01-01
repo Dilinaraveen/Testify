@@ -40,7 +40,7 @@ jobs:
     steps:
       
       - name: Run Cypress tests
-        working-directory: ./Testify
+        working-directory: Testify
         run: 
           npm run test-headless
 
