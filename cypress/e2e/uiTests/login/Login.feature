@@ -4,10 +4,10 @@
 Feature: Login functionality
 
   Scenario: User logs in to the system Successfully
-    Given the user is on the login page1
-    When the user enters a valid username and password1
-    And clicks the login button1
-    Then the user should be redirected to the dashboard1
+    Given the user is on the login page
+    When the user enters a valid username and password
+    And clicks the login button
+    Then the user should be redirected to the dashboard
 
   Scenario: User fails to logs in to the system
     Given the user is on the login page
