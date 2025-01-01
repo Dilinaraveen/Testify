@@ -31,6 +31,7 @@ jobs:
     steps:
       - name: Run Cypress tests
         run: | 
+          cd Testify
           npm run test-headless
 
       - name: Upload Cypress test report
