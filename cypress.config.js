@@ -3,6 +3,9 @@ const cucumber = require("cypress-cucumber-preprocessor").default;
 const browserify = require('@cypress/browserify-preprocessor');
 const fs = require('fs');
 const path = require('path');
+const { spawn } = require('child_process');
+
+let jarProcess; // Global variable to manage the JAR process
 
 function loadEnvConfigFile() {
   const fileName = `cypress.env.json`;
@@ -16,7 +19,7 @@ function loadEnvConfigFile() {
   }
 }
 
-// Load the config
+// Load the environment configuration
 const envConfig = loadEnvConfigFile();
 
 module.exports = defineConfig({
@@ -32,6 +35,37 @@ module.exports = defineConfig({
       const options = browserify.defaultOptions;
       options.typescript = require.resolve('typescript');
       on('file:preprocessor', cucumber(options));
+
+      // Start the JAR process before the entire test suite
+      on('before:run', async () => {
+        console.log('Starting the JAR process...');
+        jarProcess = spawn('java', ['-jar', './cypress/support/stepDefinitions/apiSteps/demo-0.0.1-SNAPSHOT.jar'], {
+          detached: true,
+          stdio: 'ignore',
+        });
+
+        // Allow some time for the JAR to initialize
+        await new Promise((resolve) => setTimeout(resolve, 5000));
+        console.log('JAR process started successfully.');
+      });
+
+      // Stop the JAR process after the entire test suite
+      on('after:run', () => {
+        if (jarProcess) {
+          console.log('Stopping the JAR process...');
+          try {
+            process.kill(-jarProcess.pid); // Stop the process using the process group ID
+            jarProcess = null; // Clear the reference
+            console.log('JAR process stopped successfully.');
+          } catch (error) {
+            console.error('Error stopping the JAR process:', error.message);
+          }
+        } else {
+          console.warn('No JAR process found to stop.');
+        }
+      });
+
+      return config;
     },
     reporter: 'mochawesome',
     reporterOptions: {
@@ -41,7 +75,7 @@ module.exports = defineConfig({
       json: true,
     },
     specPattern: 'cypress/e2e/**/*.feature',
-    baseUrl: envConfig.BASE_URL,
+    baseUrl: envConfig.BASE_URL || 'http://localhost:3000',
     env: envConfig,
-  }
+  },
 });
