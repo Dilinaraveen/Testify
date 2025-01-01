@@ -1,6 +1,6 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
 
-let response;
+let response: Cypress.Response<Book>;
 
 Given('the API endpoint is ready', () => {
   cy.log('API endpoint is ready');
@@ -9,9 +9,9 @@ Given('the API endpoint is ready', () => {
 When('the user send a POST request to create a book', () => {
   cy.request({
     method: 'POST',
-    url: 'http://localhost:7081/api/books', // API endpoint
+    url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
     headers: {
-      Authorization: 'Basic YWRtaW46cGFzc3dvcmQ=', // Basic auth header
+      Authorization: Cypress.env('API_AUTHORIZATION'), // Basic auth header
     },
     body: {
       id: 1,
