@@ -5,8 +5,10 @@
   "scripts": {
     "clean-reports": "rimraf cypress/reports",
     "merge-reports": "cross-env npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json && npx mochawesome-report-generator cypress/reports/merged-report.json -o cypress/reports",
-    "test": "cross-env npx cypress open && npm run merge-reports",
-    "test-headless": " cross-env npm run clean-reports && npx cypress run || true && npm run merge-reports"
+    "test-ui": "cross-env npx cypress open && npm run merge-reports",
+    "test-ui-headless": " cross-env npm run clean-reports && npx cypress run || true && npm run merge-reports",
+    "test-api": "",
+    "test-api-headless": ""
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,6 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
-    "step_definitions": "cypress/support/stepDefinitions/uiSteps/src"
+    "step_definitions": "cypress/support/stepDefinitions"
   }
 }

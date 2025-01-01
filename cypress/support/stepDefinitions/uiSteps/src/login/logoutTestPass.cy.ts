@@ -1,21 +1,16 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
+import { LoginPageObject } from '../../page-objects/Login';
 
-const PROFILE_ICON = '.dropdown.user > .dropdown-toggle';
-
-const SIGN_OUT_BTN = '.pull-right > .btn';
+const loginPageObject = new LoginPageObject();
 
 const LOGIN_BUTTON = '#loginForm > .mb-8 > .btn';
 
 Given('the user is in dashboard', () => {
-    cy.visit(Cypress.env('BASE_URL'));
+    loginPageObject.visitDashboard();
 });
 
-When('the user click profile icon', () => {
-    cy.get(PROFILE_ICON).click();
-});
-
-When('the user click the signout button', () => {
-    cy.get(SIGN_OUT_BTN).click();
+When('the user signout', () => {
+    loginPageObject.signout();
 });
 
 Then('the user redirect to login page', () => {
