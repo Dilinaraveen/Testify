@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
@@ -30,7 +28,6 @@ jobs:
     needs: setup
     steps:
       - name: Run Cypress tests
-        working-directory: Testify
         run: npm run test-headless
 
       - name: Upload Cypress test report
