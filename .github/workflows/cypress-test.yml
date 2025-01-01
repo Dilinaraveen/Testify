@@ -35,12 +35,19 @@ jobs:
             cypress/reports/merged-report.html
             cypress/reports/assets/
 
+      - name: Discover report files
+        id: discover-reports
+        run: |
+          # Find all JSON report files in the cypress/reports directory
+          REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
+          echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
+
       - name: Extract test data from JSON files
         id: extract-test-data
         run: |
           # Initialize the Markdown file for the report summary
-          echo "| **Project**         | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
-          echo "|---------------------|-----------------|------------|------------|" >> test-report-summary.md
+          echo "| **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
+          echo "|-----------------|------------|------------|" >> test-report-summary.md
       
           # Loop through report files
           for report_file in ${REPORT_FILES}; do
@@ -52,11 +59,10 @@ jobs:
               passedTests=$(jq '.stats.passes' "$report_file")
               failedTests=$(jq '.stats.failures' "$report_file")
               
-              # Extract project name from the report file path
-              project_name=$(echo "$report_file" | awk -F'/' '{print $(NF-3)}')
+              
       
               # Append test results to the Markdown file
-              echo "| $project_name       | $totalTests     | $passedTests | $failedTests |" >> test-report-summary.md
+              echo "| $totalTests     | $passedTests | $failedTests |" >> test-report-summary.md
             fi
           done
 
