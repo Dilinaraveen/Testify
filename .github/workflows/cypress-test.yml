@@ -28,6 +28,7 @@ jobs:
         run: pwd
 
       - name: Install dependencies
+        working-directory: ..
         run: npm install
 
       - name: Print working directory
