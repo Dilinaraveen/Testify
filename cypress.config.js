@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
 
-let jarProcess; // Global variable to manage the JAR process
+let jarProcess;
 
 function loadEnvConfigFile() {
   const fileName = `cypress.env.json`;
@@ -16,6 +16,16 @@ function loadEnvConfigFile() {
   } else {
     console.error(`Environment file not found: ${filePath}`);
     return {};
+  }
+}
+
+// Function to check if a process is running
+function isProcessRunning(pid) {
+  try {
+    process.kill(pid, 0); // Signal 0 checks if the process exists without killing it
+    return true;
+  } catch (err) {
+    return false; // Process is not running
   }
 }
 
@@ -52,16 +62,36 @@ module.exports = defineConfig({
       // Stop the JAR process after the entire test suite
       on('after:run', () => {
         if (jarProcess) {
-          console.log('Stopping the JAR process...');
-          try {
-            process.kill(-jarProcess.pid); // Stop the process using the process group ID
-            jarProcess = null; // Clear the reference
-            console.log('JAR process stopped successfully.');
-          } catch (error) {
-            console.error('Error stopping the JAR process:', error.message);
+          console.log('Attempting to stop the JAR process...');
+          const isRunning = isProcessRunning(jarProcess.pid);
+      
+          if (isRunning) {
+            try {
+              // Attempt to stop the process using the process group
+              process.kill(-jarProcess.pid);
+              console.log('JAR process stopped successfully using standard kill.');
+            } catch (error) {
+              console.warn('Standard kill failed. Attempting pkill...', error.message);
+              try {
+                const pkill = spawn('pkill', ['-f', 'demo-0.0.1-SNAPSHOT.jar']);
+                pkill.on('close', (code) => {
+                  if (code === 0) {
+                    console.log('JAR process successfully terminated using pkill.');
+                  } else {
+                    console.error(`pkill failed with exit code ${code}.`);
+                  }
+                });
+              } catch (pkillError) {
+                console.error('Error stopping the JAR process with pkill:', pkillError.message);
+              }
+            }
+          } else {
+            console.warn(`Process with PID ${jarProcess.pid} is not running.`);
           }
+      
+          jarProcess = null;
         } else {
-          console.warn('No JAR process found to stop.');
+          console.warn('JAR process is not running or already stopped.');
         }
       });
 
