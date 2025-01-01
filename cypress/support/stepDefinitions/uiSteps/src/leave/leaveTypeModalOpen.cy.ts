@@ -5,7 +5,7 @@ const leaveTypesPage = new LeaveTypesPage();
 
 const ADD_NEW_BUTTON = '.ant-btn-primary:contains("Add New")';
 const MODAL_CONTENT = ".ant-modal-content";
-const MODAL_HEADER = ".ant-modal-header"; \
+const MODAL_HEADER = ".ant-modal-header"; 
 
 Given('the user is logged in and on the Leave Types page', () => {
     leaveTypesPage.visitLeaveTypesPage();
