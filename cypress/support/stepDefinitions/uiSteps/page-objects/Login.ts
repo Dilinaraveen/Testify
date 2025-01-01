@@ -1,5 +1,4 @@
 export class LoginPageObject {
-
     USERNAME_INPUT = '#username';
 
     PASSWORD_INPUT = '#password'
@@ -13,7 +12,6 @@ export class LoginPageObject {
     PROFILE_ICON = '.dropdown.user > .dropdown-toggle';
 
     SIGN_OUT_BTN = '.pull-right > .btn';
-
 
     visitDashboard() {
         cy.visit(Cypress.env('BASE_URL'));
@@ -29,5 +27,4 @@ export class LoginPageObject {
         cy.get(this.PROFILE_ICON).click();
         cy.get(this.SIGN_OUT_BTN).click();
     }
-
 }
