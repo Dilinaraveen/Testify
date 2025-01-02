@@ -38,65 +38,59 @@ jobs:
             cypress/reports/merged-report.html
             cypress/reports/assets/
 
-      - name: Discover report files
-        id: discover-reports
-        run: |
-          # Find JSON report files for API and UI tests separately
-          API_REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
-          UI_REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
-          echo "API_REPORT_FILES=${API_REPORT_FILES}" >> $GITHUB_ENV
-          echo "UI_REPORT_FILES=${UI_REPORT_FILES}" >> $GITHUB_ENV
-
       - name: Extract test data from JSON files
         id: extract-test-data
         run: |
           # Initialize the Markdown file for the report summary
           echo "| **Category** | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
           echo "|--------------|-----------------|------------|------------|" >> test-report-summary.md
-
+      
           # Initialize variables to track if any tests failed
           echo "build_failed=false" >> $GITHUB_ENV
-
-          # Process API report files
+      
+          # Initialize counters for API and UI tests
           totalApiTests=0
           passedApiTests=0
           failedApiTests=0
-          for report_file in ${API_REPORT_FILES}; do
-            if [ -f "$report_file" ]; then
-              apiTests=$(jq '.stats.tests' "$report_file")
-              apiPasses=$(jq '.stats.passes' "$report_file")
-              apiFailures=$(jq '.stats.failures' "$report_file")
-
-              totalApiTests=$((totalApiTests + apiTests))
-              passedApiTests=$((passedApiTests + apiPasses))
-              failedApiTests=$((failedApiTests + apiFailures))
-
-              if [ "$apiFailures" -ne 0 ]; then
-                echo "build_failed=true" >> $GITHUB_ENV
-              fi
-            fi
-          done
-          echo "| API Tests    | $totalApiTests       | $passedApiTests   | $failedApiTests   |" >> test-report-summary.md
-
-          # Process UI report files
+      
           totalUiTests=0
           passedUiTests=0
           failedUiTests=0
-          for report_file in ${UI_REPORT_FILES}; do
+      
+          # Loop through all JSON report files
+          for report_file in "${REPORT_FILES}"; do
             if [ -f "$report_file" ]; then
-              uiTests=$(jq '.stats.tests' "$report_file")
-              uiPasses=$(jq '.stats.passes' "$report_file")
-              uiFailures=$(jq '.stats.failures' "$report_file")
-
-              totalUiTests=$((totalUiTests + uiTests))
-              passedUiTests=$((passedUiTests + uiPasses))
-              failedUiTests=$((failedUiTests + uiFailures))
-
-              if [ "$uiFailures" -ne 0 ]; then
+              # Extract results specific to API tests
+              apiResults=$(jq '[.results[] | select(.file | contains("cypress/e2e/apiTests"))]' "$report_file")
+              apiTests=$(echo "$apiResults" | jq 'map(.stats.tests) | add // 0')
+              apiPasses=$(echo "$apiResults" | jq 'map(.stats.passes) | add // 0')
+              apiFailures=$(echo "$apiResults" | jq 'map(.stats.failures) | add // 0')
+      
+              totalApiTests=$((totalApiTests + ${apiTests:-0}))
+              passedApiTests=$((passedApiTests + ${apiPasses:-0}))
+              failedApiTests=$((failedApiTests + ${apiFailures:-0}))
+      
+              # Extract results specific to UI tests
+              uiResults=$(jq '[.results[] | select(.file | contains("cypress/e2e/uiTests"))]' "$report_file")
+              uiTests=$(echo "$uiResults" | jq 'map(.stats.tests) | add // 0')
+              uiPasses=$(echo "$uiResults" | jq 'map(.stats.passes) | add // 0')
+              uiFailures=$(echo "$uiResults" | jq 'map(.stats.failures) | add // 0')
+      
+              totalUiTests=$((totalUiTests + ${uiTests:-0}))
+              passedUiTests=$((passedUiTests + ${uiPasses:-0}))
+              failedUiTests=$((failedUiTests + ${uiFailures:-0}))
+      
+              # Mark build as failed if any API or UI test fails
+              if [ "${apiFailures:-0}" -ne 0 ] || [ "${uiFailures:-0}" -ne 0 ]; then
                 echo "build_failed=true" >> $GITHUB_ENV
               fi
             fi
           done
+      
+          # Append API test results to the Markdown file
+          echo "| API Tests    | $totalApiTests       | $passedApiTests   | $failedApiTests   |" >> test-report-summary.md
+      
+          # Append UI test results to the Markdown file
           echo "| UI Tests     | $totalUiTests       | $passedUiTests   | $failedUiTests   |" >> test-report-summary.md
 
       - name: Comment on PR with test report summary
