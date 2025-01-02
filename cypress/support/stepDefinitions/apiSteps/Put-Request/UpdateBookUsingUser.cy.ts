@@ -9,9 +9,9 @@ Given('the User is logged in and the API endpoint is ready', () => {
 When('the User sends a PUT request to update a book', () => {
   cy.request({
     method: 'PUT',
-    url: `${Cypress.env('API_URL')}/api/books/1`, // Replace with the actual ID to update
+    url: `${Cypress.env('API_URL')}/api/books/1`, 
     headers: {
-      Authorization: Cypress.env('API_AUTHORIZATION_USER'), // Use User authorization
+      Authorization: Cypress.env('API_AUTHORIZATION_USER'), 
     },
     body: {
       id: 1,
