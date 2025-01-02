@@ -8,7 +8,7 @@ Given('the user is on the Leave Type page', () => {
 });
 
 When('the user clicks on the "Add New" button', () => {
-    cy.get('[style=""] > .ant-btn').click();
+    cy.get('.ant-col-18 > .ant-space > [style=""] > .ant-btn').click();
 });
 
 Then('the "LeaveType" modal opens', () => {
