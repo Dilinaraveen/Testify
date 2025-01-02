@@ -38,9 +38,10 @@ jobs:
             cypress/reports/merged-report.html
             cypress/reports/assets/
 
-      - name: Discover report file
-        id: discover-report
+      - name: Discover report files
+        id: discover-reports
         run: |
+          # Find all JSON report files in the cypress/reports directory
           REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
           echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
 
@@ -70,9 +71,9 @@ jobs:
               # Parse each result in the JSON file
               jq -c '.results[]' "$report_file" | while read -r test; do
                 file=$(echo "$test" | jq -r '.file')
-                totalTests=$(echo "$test" | jq '[.suites[].tests | length] | add')
-                passedTests=$(echo "$test" | jq '[.suites[].tests[] | select(.pass == true)] | length')
-                failedTests=$(echo "$test" | jq '[.suites[].tests[] | select(.fail == true)] | length')
+                totalTests=$(echo "$test" | jq '.suites[].tests | length' | awk '{s+=$1} END {print s}')
+                passedTests=$(echo "$test" | jq '.suites[].tests[] | select(.pass == true) | length' | awk '{s+=$1} END {print s}')
+                failedTests=$(echo "$test" | jq '.suites[].tests[] | select(.fail == true) | length' | awk '{s+=$1} END {print s}')
 
                 if [[ "$file" == *"apiTests"* ]]; then
                   api_total=$((api_total + totalTests))
@@ -86,10 +87,6 @@ jobs:
               done
             fi
           done
-
-          # Debugging: Print calculated values
-          echo "API Tests - Total: $api_total, Passed: $api_pass, Failed: $api_fail"
-          echo "UI Tests - Total: $ui_total, Passed: $ui_pass, Failed: $ui_fail"
 
           # Append results to the Markdown file
           echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
