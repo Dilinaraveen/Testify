@@ -39,9 +39,8 @@ jobs:
             cypress/reports/assets/
 
       - name: Discover report files
-        id: discover-reports
+        id: discover-report
         run: |
-          # Find all JSON report files in the cypress/reports directory
           REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
           echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
 
@@ -63,30 +62,49 @@ jobs:
           # Debugging: Check REPORT_FILES content
           echo "REPORT_FILES=${REPORT_FILES}"
 
-          # Loop through report files
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
               echo "Processing file: $report_file"
               
-              # Parse each result in the JSON file
-              jq -c '.results[]' "$report_file" | while read -r test; do
-                file=$(echo "$test" | jq -r '.file')
-                totalTests=$(echo "$test" | jq '.suites[].tests | length' | awk '{s+=$1} END {print s}')
-                passedTests=$(echo "$test" | jq '.suites[].tests[] | select(.pass == true) | length' | awk '{s+=$1} END {print s}')
-                failedTests=$(echo "$test" | jq '.suites[].tests[] | select(.fail == true) | length' | awk '{s+=$1} END {print s}')
-
+              # Parse each feature file object in the JSON file
+              jq -c '.results[]' "$report_file" | while read -r feature; do
+                file=$(echo "$feature" | jq -r '.file')  # Get the file path
+                
+                # Initialize counters for this feature file
+                feature_total=0
+                feature_passed=0
+                feature_failed=0
+                
+                # Loop through suites array in the current feature
+                echo "$feature" | jq -c '.suites[]' | while read -r suite; do
+                  # Count tests within the suite
+                  suite_total=$(echo "$suite" | jq '.tests | length')
+                  suite_passed=$(echo "$suite" | jq '.tests[] | select(.pass == true) | length' | awk '{s+=$1} END {print s}')
+                  suite_failed=$(echo "$suite" | jq '.tests[] | select(.fail == true) | length' | awk '{s+=$1} END {print s}')
+                  
+                  # Aggregate suite results into feature-level counters
+                  feature_total=$((feature_total + suite_total))
+                  feature_passed=$((feature_passed + suite_passed))
+                  feature_failed=$((feature_failed + suite_failed))
+                done
+                
+                # Categorize and update the overall counters
                 if [[ "$file" == *"apiTests"* ]]; then
-                  api_total=$((api_total + totalTests))
-                  api_pass=$((api_pass + passedTests))
-                  api_fail=$((api_fail + failedTests))
+                  api_total=$((api_total + feature_total))
+                  api_pass=$((api_pass + feature_passed))
+                  api_fail=$((api_fail + feature_failed))
                 elif [[ "$file" == *"uiTests"* ]]; then
-                  ui_total=$((ui_total + totalTests))
-                  ui_pass=$((ui_pass + passedTests))
-                  ui_fail=$((ui_fail + failedTests))
+                  ui_total=$((ui_total + feature_total))
+                  ui_pass=$((ui_pass + feature_passed))
+                  ui_fail=$((ui_fail + feature_failed))
                 fi
               done
             fi
           done
+
+          # Debugging: Print calculated values
+          echo "API Tests - Total: $api_total, Passed: $api_pass, Failed: $api_fail"
+          echo "UI Tests - Total: $ui_total, Passed: $ui_pass, Failed: $ui_fail"
 
           # Append results to the Markdown file
           echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
