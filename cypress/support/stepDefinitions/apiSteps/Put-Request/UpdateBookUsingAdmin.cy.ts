@@ -80,6 +80,6 @@ When('the Admin sends a PUT request to update a book with identical existing dat
     expect(alreadyExistsResponse.status).to.eq(208);
   });
   
-  Then('the response message should be "Book Already Exists"', () => {
+  Then('the response message should be Book Already Exists', () => {
     expect(alreadyExistsResponse.body).to.eq('Book Already Exists');
   });
