@@ -15,4 +15,5 @@ When('the user enters a invalid username and password and press log in', () => {
 
 Then('the user should be seen invalid credential message', () => {
   cy.get(LOGIN_FAILED_MSG).should('contain', 'Login failed');
+
 });

@@ -1,7 +1,8 @@
 ## How to run cypress
-    - (UI) `npm test` / `npx cypress open` (do not create success/fail report)
+    - (UI) `npm test` to run all the test in UI
     - (Terminal) `npm run test-headless` to run all the tests with generating success / fail report
-    - (Terminal) `npx cypress run` to run all tests without generating success/fail report
+    - (Terminal) `npm run test-ui-headless` to run all UI tests without generating success/fail report
+    - (Terminal) `npm run test-api-headless` to run all API tests without generating success/fail report
 
 ## How to run .jar file
     - Go to `cypress/support/stepDefinitions/apiSteps`
@@ -24,3 +25,5 @@
   
 - To run specific .feature file (important for API testing)
   - `npx cypress run --spec "cypress/e2e/apiTests/CreateBook.feature"`
+- To run all the api testing
+  - `npm run test-api-headless`
