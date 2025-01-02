@@ -41,80 +41,59 @@ jobs:
       - name: Discover report files
         id: discover-reports
         run: |
-          # Find all JSON report files in the cypress/reports directory
           REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
           echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
 
-      - name: Extract test data from JSON files
+      - name: Extract and group test data
         id: extract-test-data
         run: |
-          # Initialize the Markdown file for the report summary
-          echo "| **Test Type** | **Total** | **Passed** | **Failed** |" > test-report-summary.md
-          echo "|--------------|-----------|------------|------------|" >> test-report-summary.md
+          # Initialize Markdown file
+          echo "| **Test Type** | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
+          echo "|--------------|-----------------|------------|------------|" >> test-report-summary.md
 
           # Initialize counters
           api_total=0
-          api_pass=0
-          api_fail=0
+          api_passed=0
+          api_failed=0
           ui_total=0
-          ui_pass=0
-          ui_fail=0
-      
-          # Initialize a variable to track if any tests failed
-          echo "build_failed=false" >> $GITHUB_ENV
+          ui_passed=0
+          ui_failed=0
 
-          # Loop through report files
+          echo "build_failed=false" >> $GITHUB_ENV
+          echo "has_content=false" >> $GITHUB_ENV
+
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
               echo "has_content=true" >> $GITHUB_ENV
               
-              # Loop through results array
+              # Process each feature file in results
               jq -c '.results[]' "$report_file" | while read -r feature; do
                 file=$(echo "$feature" | jq -r '.file')
+                total=$(echo "$feature" | jq '[.suites[].tests[]] | length')
+                passed=$(echo "$feature" | jq '[.suites[].tests[] | select(.pass == true)] | length')
+                failed=$(echo "$feature" | jq '[.suites[].tests[] | select(.fail == true)] | length')
 
-                # Initialize per-feature counters
-                feature_total=0
-                feature_passed=0
-                feature_failed=0
-
-                # Loop through suites in each feature
-                echo "$feature" | jq -c '.suites[]' | while read -r suite; do
-                  suite_total=$(echo "$suite" | jq '[.tests[]] | length')
-                  suite_passed=$(echo "$suite" | jq '[.tests[] | select(.pass == true)] | length')
-                  suite_failed=$(echo "$suite" | jq '[.tests[] | select(.fail == true)] | length')
-
-                  # Add suite results to feature-level counters
-                  feature_total=$((feature_total + suite_total))
-                  feature_passed=$((feature_passed + suite_passed))
-                  feature_failed=$((feature_failed + suite_failed))
-                done
-
-                # Update global counters based on test type
                 if [[ "$file" == *"apiTests"* ]]; then
-                  api_total=$((api_total + feature_total))
-                  api_pass=$((api_pass + feature_passed))
-                  api_fail=$((api_fail + feature_failed))
+                  api_total=$((api_total + total))
+                  api_passed=$((api_passed + passed))
+                  api_failed=$((api_failed + failed))
                 elif [[ "$file" == *"uiTests"* ]]; then
-                  ui_total=$((ui_total + feature_total))
-                  ui_pass=$((ui_pass + feature_passed))
-                  ui_fail=$((ui_fail + feature_failed))
+                  ui_total=$((ui_total + total))
+                  ui_passed=$((ui_passed + passed))
+                  ui_failed=$((ui_failed + failed))
                 fi
               done
-              
-              # Check if there are any failed tests
-              if [ "$ui_fail" -ne 0 ]; then
-                echo "build_failed=true" >> $GITHUB_ENV
-              fi
-              # Check if there are any failed tests
-              if [ "$api_fail" -ne 0 ]; then
-                echo "build_failed=true" >> $GITHUB_ENV
-              fi
-      
-              # Append test results to the Markdown file
-              echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
-              echo "| UI Tests     | $ui_total       | $ui_pass   | $ui_fail   |" >> test-report-summary.md
             fi
           done
+
+          # Check for failed tests
+          if [ "$api_failed" -ne 0 ] || [ "$ui_failed" -ne 0 ]; then
+            echo "build_failed=true" >> $GITHUB_ENV
+          fi
+
+          # Append results to the Markdown file
+          echo "| API Tests    | $api_total      | $api_passed  | $api_failed  |" >> test-report-summary.md
+          echo "| UI Tests     | $ui_total       | $ui_passed   | $ui_failed   |" >> test-report-summary.md
 
       - name: Comment on PR with test report summary
         if: env.has_content == 'true'
@@ -123,7 +102,7 @@ jobs:
           path: test-report-summary.md
           recreate: true
 
-      - name: Make build pass or fail or test results after creating the report
+      - name: Fail build if tests failed
         if: env.build_failed == 'true'
         run: |
           echo "Some tests failed. Failing the build."
