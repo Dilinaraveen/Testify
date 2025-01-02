@@ -8,7 +8,7 @@ Given('the user is on the Training page', () => {
 });
 
 When('the user clicks on the "Add New" button', () => {
-    cy.get('.ant-space-item > .ant-btn').click();
+    cy.get('.ant-space-item > .ant-btn', { timeout: 10000 }).should('be.visible').click();
 });
 
 Then('the "Courses" modal opens', () => {
