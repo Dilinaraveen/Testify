@@ -42,8 +42,8 @@ jobs:
         id: discover-reports
         run: |
           # Find JSON report files for API and UI tests separately
-          API_REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json' | grep 'apiTests')
-          UI_REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json' | grep 'uiTests')
+          API_REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
+          UI_REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
           echo "API_REPORT_FILES=${API_REPORT_FILES}" >> $GITHUB_ENV
           echo "UI_REPORT_FILES=${UI_REPORT_FILES}" >> $GITHUB_ENV
 
