@@ -2,7 +2,7 @@ import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
 import { Expenses } from '../../page-objects/Expenses';
 
 const TYPE_NAME = 'Test-Type';
-
+const name = "1";
 const expenses = new Expenses();
 
 Given('the user is on expense page', () => {
