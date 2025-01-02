@@ -12,7 +12,7 @@ When('the user sends a POST request to create a book', () => {
     method: 'POST',
     url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
     headers: {
-      Authorization: Cypress.env('API_AUTHORIZATION'), // Basic auth header
+      Authorization: Cypress.env('API_AUTHORIZATION_ADMIN'), // Basic auth header
     },
     body: {
       id: 1,
@@ -38,7 +38,7 @@ When('the user tries to create the same book again', () => {
       method: 'POST',
       url: `${Cypress.env('API_URL')}/api/books`,
       headers: {
-        Authorization: Cypress.env('API_AUTHORIZATION'),
+        Authorization: Cypress.env('API_AUTHORIZATION_ADMIN'),
       },
       body: {
         id: 1,
