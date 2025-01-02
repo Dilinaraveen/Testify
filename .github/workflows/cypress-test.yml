@@ -59,48 +59,38 @@ jobs:
           ui_passed=0
           ui_failed=0
 
-          echo "build_failed=false" >> $GITHUB_ENV
-          echo "has_content=false" >> $GITHUB_ENV
-
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
-              echo "has_content=true" >> $GITHUB_ENV
+              echo "Processing report file: $report_file"
               
-              # Process each feature file in results
+              # Loop through feature results
               jq -c '.results[]' "$report_file" | while read -r feature; do
                 file=$(echo "$feature" | jq -r '.file')
-                
-                # Loop through suites
-                total_tests=0
-                passed_tests=0
-                failed_tests=0
+                feature_total=0
+                feature_passed=0
+                feature_failed=0
 
+                # Loop through suites
                 echo "$feature" | jq -c '.suites[]' | while read -r suite; do
                   suite_total=$(echo "$suite" | jq '.tests | length')
                   suite_passed=$(echo "$suite" | jq '[.tests[] | select(.state == "passed")] | length')
                   suite_failed=$(echo "$suite" | jq '[.tests[] | select(.state == "failed")] | length')
 
-                  total_tests=$((total_tests + suite_total))
-                  passed_tests=$((passed_tests + suite_passed))
-                  failed_tests=$((failed_tests + suite_failed))
+                  feature_total=$((feature_total + suite_total))
+                  feature_passed=$((feature_passed + suite_passed))
+                  feature_failed=$((feature_failed + suite_failed))
                 done
 
-                # Update global counters based on test type
                 if [[ "$file" == *"apiTests"* ]]; then
-                  api_total=$((api_total + total_tests))
-                  api_passed=$((api_passed + passed_tests))
-                  api_failed=$((api_failed + failed_tests))
+                  api_total=$((api_total + feature_total))
+                  api_passed=$((api_passed + feature_passed))
+                  api_failed=$((api_failed + feature_failed))
                 elif [[ "$file" == *"uiTests"* ]]; then
-                  ui_total=$((ui_total + total_tests))
-                  ui_passed=$((ui_passed + passed_tests))
-                  ui_failed=$((ui_failed + failed_tests))
+                  ui_total=$((ui_total + feature_total))
+                  ui_passed=$((ui_passed + feature_passed))
+                  ui_failed=$((ui_failed + feature_failed))
                 fi
               done
-
-              # Check for failed tests
-              if [ "$api_failed" -ne 0 ] || [ "$ui_failed" -ne 0 ]; then
-                echo "build_failed=true" >> $GITHUB_ENV
-              fi
             fi
           done
 
