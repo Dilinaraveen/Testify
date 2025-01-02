@@ -38,6 +38,12 @@ jobs:
             cypress/reports/merged-report.html
             cypress/reports/assets/
 
+      - name: Discover report file
+        id: discover-report
+        run: |
+          REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
+          echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
+
       - name: Extract test data from JSON files
         id: extract-test-data
         run: |
@@ -88,7 +94,6 @@ jobs:
           # Append results to the Markdown file
           echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
           echo "| UI Tests     | $ui_total       | $ui_pass   | $ui_fail   |" >> test-report-summary.md
-
 
       - name: Comment on PR with test report summary
         if: always()
