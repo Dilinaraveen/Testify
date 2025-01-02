@@ -8,10 +8,7 @@ Given('the user is on the Training page', () => {
 });
 
 When('the user clicks on the "Add New" button', () => {
-    cy.get('.ant-col-18 > .ant-space > .ant-space-item > .ant-btn', { timeout: 10000 })
-        .should('exist')
-        .should('be.visible')
-        .click();
+    cy.get('.ant-space-item > .ant-btn').click();
 });
 
 
