@@ -6,3 +6,4 @@ Feature: Add New Course Validation
     And the "Courses" modal opens
     And the user clicks on the "Save" button without entering any information
     Then the error message "This field is required" should be displayed
+
