@@ -5,10 +5,10 @@
   "scripts": {
     "clean-reports": "rimraf cypress/reports",
     "merge-reports": "cross-env npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json && npx mochawesome-report-generator cypress/reports/merged-report.json -o cypress/reports",
-    "test-ui": "cross-env npx cypress open && npm run merge-reports",
-    "test-ui-headless": " cross-env npm run clean-reports && npx cypress run || true && npm run merge-reports",
-    "test-api": "",
-    "test-api-headless": ""
+    "test": "cross-env npx cypress open",
+    "test-headless": " cross-env npm run clean-reports && npx cypress run || true && npm run merge-reports",
+    "test-ui-headless": "cross-env npx cypress run \"cypress/e2e/uiTests\"",
+    "test-api-headless": "cross-env npx cypress run --spec \"cypress/e2e/apiTests\""
   },
   "author": "",
   "license": "ISC",
