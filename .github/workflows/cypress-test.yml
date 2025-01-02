@@ -59,11 +59,14 @@ jobs:
           ui_passed=0
           ui_failed=0
 
+          echo "build_failed=false" >> $GITHUB_ENV
+          echo "has_content=false" >> $GITHUB_ENV
+
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
-              echo "Processing report file: $report_file"
-              
-              # Loop through feature results
+              echo "has_content=true" >> $GITHUB_ENV
+
+              # Process each feature file in results
               jq -c '.results[]' "$report_file" | while read -r feature; do
                 file=$(echo "$feature" | jq -r '.file')
                 feature_total=0
@@ -81,6 +84,7 @@ jobs:
                   feature_failed=$((feature_failed + suite_failed))
                 done
 
+                # Update global counters based on test type
                 if [[ "$file" == *"apiTests"* ]]; then
                   api_total=$((api_total + feature_total))
                   api_passed=$((api_passed + feature_passed))
@@ -97,6 +101,11 @@ jobs:
           # Append results to Markdown file
           echo "| API Tests    | $api_total      | $api_passed  | $api_failed  |" >> test-report-summary.md
           echo "| UI Tests     | $ui_total       | $ui_passed   | $ui_failed   |" >> test-report-summary.md
+
+          # Set build failure if any test failed
+          if [ "$api_failed" -ne 0 ] || [ "$ui_failed" -ne 0 ]; then
+            echo "build_failed=true" >> $GITHUB_ENV
+          fi
 
       - name: Comment on PR with test report summary
         if: env.has_content == 'true'
