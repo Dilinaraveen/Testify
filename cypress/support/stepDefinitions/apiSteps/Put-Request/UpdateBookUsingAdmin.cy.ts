@@ -60,17 +60,17 @@ Then('the response should indicate the book does not exist', () => {
 When('the Admin sends a PUT request to update a book with identical existing data', () => {
     cy.request({
       method: 'PUT',
-      url: `${Cypress.env('API_URL')}/api/books/1`, // Replace with existing book ID
+      url: `${Cypress.env('API_URL')}/api/books/1`, 
       headers: {
         Authorization: Cypress.env('API_AUTHORIZATION_ADMIN'),
       },
       body: {
         id: 1,
-        title: 'Updated Book Title', // Existing title
-        author: 'Updated Author Name', // Existing author
-        genre: 'Updated Genre', // Existing genre
+        title: 'Updated Book Title',
+        author: 'Updated Author Name', 
+        genre: 'Updated Genre',
       },
-      failOnStatusCode: false, // Allow handling error responses
+      failOnStatusCode: false, 
     }).then((res) => {
       alreadyExistsResponse = res;
     });
