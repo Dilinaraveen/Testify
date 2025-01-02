@@ -49,40 +49,53 @@ jobs:
         id: extract-test-data
         run: |
           # Initialize the Markdown file for the report summary
-          echo "| **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
-          echo "|-----------------|------------|------------|" >> test-report-summary.md
-      
-          # Initialize a variable to track if any tests failed
-          echo "build_failed=false" >> $GITHUB_ENV
+          echo "| **Test Type** | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
+          echo "|--------------|-----------------|------------|------------|" >> test-report-summary.md
+
+          # Initialize variables to track test results
+          api_total=0
+          api_pass=0
+          api_fail=0
+          ui_total=0
+          ui_pass=0
+          ui_fail=0
 
           # Loop through report files
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
-              echo "has_content=true" >> $GITHUB_ENV
-              
-              # Extract values from the JSON file using jq
-              totalTests=$(jq '.stats.tests' "$report_file")
-              passedTests=$(jq '.stats.passes' "$report_file")
-              failedTests=$(jq '.stats.failures' "$report_file")
-              
-              # Check if there are any failed tests
-              if [ "$failedTests" -ne 0 ]; then
-                echo "build_failed=true" >> $GITHUB_ENV
-              fi
-      
-              # Append test results to the Markdown file
-              echo "| $totalTests     | $passedTests | $failedTests |" >> test-report-summary.md
+              # Extract test results based on file paths
+              tests=$(jq -c '.results[]' "$report_file")
+              echo "$tests" | while read -r test; do
+                file=$(echo "$test" | jq -r '.file')
+                totalTests=$(echo "$test" | jq '.suites[].tests | length' | awk '{s+=$1} END {print s}')
+                passedTests=$(echo "$test" | jq '.suites[].tests[] | select(.pass == true) | length' | awk '{s+=$1} END {print s}')
+                failedTests=$(echo "$test" | jq '.suites[].tests[] | select(.fail == true) | length' | awk '{s+=$1} END {print s}')
+
+                if [[ "$file" == *"apiTests"* ]]; then
+                  api_total=$((api_total + totalTests))
+                  api_pass=$((api_pass + passedTests))
+                  api_fail=$((api_fail + failedTests))
+                elif [[ "$file" == *"uiTests"* ]]; then
+                  ui_total=$((ui_total + totalTests))
+                  ui_pass=$((ui_pass + passedTests))
+                  ui_fail=$((ui_fail + failedTests))
+                fi
+              done
             fi
           done
 
+          # Append results to the Markdown file
+          echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
+          echo "| UI Tests     | $ui_total       | $ui_pass   | $ui_fail   |" >> test-report-summary.md
+
       - name: Comment on PR with test report summary
-        if: env.has_content == 'true'
+        if: always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: test-report-summary.md
           recreate: true
 
-      - name: Make build pass or fail or test results after creating the report
+      - name: Make build pass or fail based on test results
         if: env.build_failed == 'true'
         run: |
           echo "Some tests failed. Failing the build."
