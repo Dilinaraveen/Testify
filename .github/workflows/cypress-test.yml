@@ -38,69 +38,51 @@ jobs:
             cypress/reports/merged-report.html
             cypress/reports/assets/
 
+      - name: Discover report files
+        id: discover-reports
+        run: |
+          # Find all JSON report files in the cypress/reports directory
+          REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
+          echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
+
       - name: Extract test data from JSON files
         id: extract-test-data
         run: |
           # Initialize the Markdown file for the report summary
-          echo "| **Category** | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
-          echo "|--------------|-----------------|------------|------------|" >> test-report-summary.md
+          echo "| **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
+          echo "|-----------------|------------|------------|" >> test-report-summary.md
       
-          # Initialize variables to track if any tests failed
+          # Initialize a variable to track if any tests failed
           echo "build_failed=false" >> $GITHUB_ENV
-      
-          # Initialize counters for API and UI tests
-          totalApiTests=0
-          passedApiTests=0
-          failedApiTests=0
-      
-          totalUiTests=0
-          passedUiTests=0
-          failedUiTests=0
-      
-          # Loop through all JSON report files
-          for report_file in "${REPORT_FILES}"; do
+
+          # Loop through report files
+          for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
-              # Extract results specific to API tests
-              apiResults=$(jq '[.results[] | select(.file | contains("cypress/e2e/apiTests"))]' "$report_file")
-              apiTests=$(echo "$apiResults" | jq 'map(.stats.tests) | add // 0')
-              apiPasses=$(echo "$apiResults" | jq 'map(.stats.passes) | add // 0')
-              apiFailures=$(echo "$apiResults" | jq 'map(.stats.failures) | add // 0')
-      
-              totalApiTests=$((totalApiTests + ${apiTests:-0}))
-              passedApiTests=$((passedApiTests + ${apiPasses:-0}))
-              failedApiTests=$((failedApiTests + ${apiFailures:-0}))
-      
-              # Extract results specific to UI tests
-              uiResults=$(jq '[.results[] | select(.file | contains("cypress/e2e/uiTests"))]' "$report_file")
-              uiTests=$(echo "$uiResults" | jq 'map(.stats.tests) | add // 0')
-              uiPasses=$(echo "$uiResults" | jq 'map(.stats.passes) | add // 0')
-              uiFailures=$(echo "$uiResults" | jq 'map(.stats.failures) | add // 0')
-      
-              totalUiTests=$((totalUiTests + ${uiTests:-0}))
-              passedUiTests=$((passedUiTests + ${uiPasses:-0}))
-              failedUiTests=$((failedUiTests + ${uiFailures:-0}))
-      
-              # Mark build as failed if any API or UI test fails
-              if [ "${apiFailures:-0}" -ne 0 ] || [ "${uiFailures:-0}" -ne 0 ]; then
+              echo "has_content=true" >> $GITHUB_ENV
+              
+              # Extract values from the JSON file using jq
+              totalTests=$(jq '.stats.tests' "$report_file")
+              passedTests=$(jq '.stats.passes' "$report_file")
+              failedTests=$(jq '.stats.failures' "$report_file")
+              
+              # Check if there are any failed tests
+              if [ "$failedTests" -ne 0 ]; then
                 echo "build_failed=true" >> $GITHUB_ENV
               fi
+      
+              # Append test results to the Markdown file
+              echo "| $totalTests     | $passedTests | $failedTests |" >> test-report-summary.md
             fi
           done
-      
-          # Append API test results to the Markdown file
-          echo "| API Tests    | $totalApiTests       | $passedApiTests   | $failedApiTests   |" >> test-report-summary.md
-      
-          # Append UI test results to the Markdown file
-          echo "| UI Tests     | $totalUiTests       | $passedUiTests   | $failedUiTests   |" >> test-report-summary.md
 
       - name: Comment on PR with test report summary
-        if: env.build_failed != 'false'
+        if: env.has_content == 'true'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: test-report-summary.md
           recreate: true
 
-      - name: Make build pass or fail based on test results
+      - name: Make build pass or fail or test results after creating the report
         if: env.build_failed == 'true'
         run: |
           echo "Some tests failed. Failing the build."
