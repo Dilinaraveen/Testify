@@ -6,7 +6,7 @@ Given('the Admin is logged in and the API endpoint is ready', () => {
   cy.log('API endpoint is ready');
 });
 
-When('the Admin sends a Delete request to Delete a bookk', () => {
+When('the Admin sends a Delete request to Delete a book', () => {
   cy.request({
     method: 'DELETE',
     url: `${Cypress.env('API_URL')}/api/books/${idtoDelete}`, // API endpoint
