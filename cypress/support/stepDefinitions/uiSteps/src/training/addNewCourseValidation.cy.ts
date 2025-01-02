@@ -9,7 +9,7 @@ Given('the user is on the Training page', () => {
 
 When('the user clicks on the Add New button', () => {
     cy.wait(500);
-    cy.get('.ant-space-item > .ant-btn').click({force:true});
+    cy.get('.ant-space-item > .ant-btn').click();
 });
 
 

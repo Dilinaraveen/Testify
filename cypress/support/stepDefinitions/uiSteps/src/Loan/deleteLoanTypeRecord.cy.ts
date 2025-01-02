@@ -12,6 +12,12 @@ Given('the user is on the Add New Loan Type page', () => {
   LoanObject.VisitLoanPage();
 });
 
+When('the user add new load type', () => {
+  cy.get('.col-xs-12 > .btn').click();
+  cy.get('#name').type('Personal loan');
+  cy.get('.col-sm-9 > .saveBtn').click();
+})
+
 When('the user clicks the delete button for a loan type record {string}', (loanTypeName) => {
   cy.contains('tr', loanTypeName).within(() => {
     cy.get(DeleteButtonSelector).click();
