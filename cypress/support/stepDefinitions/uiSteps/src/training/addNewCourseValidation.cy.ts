@@ -7,16 +7,17 @@ Given('the user is on the Training page', () => {
     trainingPage.visitTrainingPage();
 });
 
-When('the user clicks on the "Add New" button', () => {
+When('the user clicks on the Add New button', () => {
+    cy.wait(500);
     cy.get('.ant-space-item > .ant-btn').click();
 });
 
 
-Then('the "Courses" modal opens', () => {
+Then('the courses modal opens', () => {
     cy.get('.ant-modal-content').should('be.visible');
 });
 
-When('the user clicks on the "Save" button without entering any information', () => {
+When('the user clicks on the save button without entering any information', () => {
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click();
 });
 
