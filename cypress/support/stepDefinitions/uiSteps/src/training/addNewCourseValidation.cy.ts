@@ -8,9 +8,12 @@ Given('the user is on the Training page', () => {
 });
 
 When('the user clicks on the "Add New" button', () => {
-    cy.wait(1000);
-    cy.get('.ant-col-18 > .ant-space > .ant-space-item > .ant-btn').should('be.visible').click();
+    cy.get('.ant-col-18 > .ant-space > .ant-space-item > .ant-btn', { timeout: 10000 })
+        .should('exist')
+        .should('be.visible')
+        .click();
 });
+
 
 Then('the "Courses" modal opens', () => {
     cy.get('.ant-modal-content').should('be.visible');
