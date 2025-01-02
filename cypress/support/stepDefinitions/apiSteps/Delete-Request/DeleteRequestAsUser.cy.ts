@@ -21,7 +21,7 @@ When('the user sends a Delete request to Delete a book', () => {
   });
 });
 
-Then('the response should be "User is not permitted"', () => {
+Then('the response staus code should be 403', () => {
   expect(response.status).to.eq(403); // Check for CREATED status code
   expect(response.body).to.have.property('message','User is not permitted.')
 });
