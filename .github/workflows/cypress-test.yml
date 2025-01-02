@@ -38,13 +38,6 @@ jobs:
             cypress/reports/merged-report.html
             cypress/reports/assets/
 
-      - name: Discover report files
-        id: discover-reports
-        run: |
-          # Find all JSON report files in the cypress/reports directory
-          REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
-          echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
-
       - name: Extract test data from JSON files
         id: extract-test-data
         run: |
@@ -60,16 +53,20 @@ jobs:
           ui_pass=0
           ui_fail=0
 
+          # Debugging: Check REPORT_FILES content
+          echo "REPORT_FILES=${REPORT_FILES}"
+
           # Loop through report files
           for report_file in ${REPORT_FILES}; do
             if [ -f "$report_file" ]; then
-              # Extract test results based on file paths
-              tests=$(jq -c '.results[]' "$report_file")
-              echo "$tests" | while read -r test; do
+              echo "Processing file: $report_file"
+              
+              # Parse each result in the JSON file
+              jq -c '.results[]' "$report_file" | while read -r test; do
                 file=$(echo "$test" | jq -r '.file')
-                totalTests=$(echo "$test" | jq '.suites[].tests | length' | awk '{s+=$1} END {print s}')
-                passedTests=$(echo "$test" | jq '.suites[].tests[] | select(.pass == true) | length' | awk '{s+=$1} END {print s}')
-                failedTests=$(echo "$test" | jq '.suites[].tests[] | select(.fail == true) | length' | awk '{s+=$1} END {print s}')
+                totalTests=$(echo "$test" | jq '[.suites[].tests | length] | add')
+                passedTests=$(echo "$test" | jq '[.suites[].tests[] | select(.pass == true)] | length')
+                failedTests=$(echo "$test" | jq '[.suites[].tests[] | select(.fail == true)] | length')
 
                 if [[ "$file" == *"apiTests"* ]]; then
                   api_total=$((api_total + totalTests))
@@ -84,9 +81,14 @@ jobs:
             fi
           done
 
+          # Debugging: Print calculated values
+          echo "API Tests - Total: $api_total, Passed: $api_pass, Failed: $api_fail"
+          echo "UI Tests - Total: $ui_total, Passed: $ui_pass, Failed: $ui_fail"
+
           # Append results to the Markdown file
           echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
           echo "| UI Tests     | $ui_total       | $ui_pass   | $ui_fail   |" >> test-report-summary.md
+
 
       - name: Comment on PR with test report summary
         if: always()
