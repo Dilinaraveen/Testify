@@ -9,15 +9,10 @@ on:
 jobs:
   run-tests:
     name: Run Cypress Tests
-    permissions:
-      contents: read
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
@@ -30,28 +25,13 @@ jobs:
       - name: Run Cypress tests
         run: npm run test-ui-headless
 
-      - name: Upload Cypress test report
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-report
-          path: |
-            cypress/reports/merged-report.html
-            cypress/reports/assets/
-
-      - name: Discover report files
-        id: discover-report
+      - name: Discover and group results
+        id: group-results
         run: |
-          REPORT_FILES=$(find cypress/reports -type f -name 'merged-report.json')
-          echo "REPORT_FILES=${REPORT_FILES}" >> $GITHUB_ENV
-
-      - name: Extract test data from JSON files
-        id: extract-test-data
-        run: |
-          # Initialize the Markdown file for the report summary
-          echo "| **Test Type** | **Total Tests** | **Passed** | **Failed** |" > test-report-summary.md
-          echo "|--------------|-----------------|------------|------------|" >> test-report-summary.md
-
-          # Initialize variables to track test results
+          # Locate the JSON report
+          REPORT_FILE="cypress/reports/merged-report.json"
+          
+          # Initialize counters
           api_total=0
           api_pass=0
           api_fail=0
@@ -59,66 +39,35 @@ jobs:
           ui_pass=0
           ui_fail=0
 
-          # Debugging: Check REPORT_FILES content
-          echo "REPORT_FILES=${REPORT_FILES}"
+          # Parse JSON and group results
+          jq -c '.results[]' "$REPORT_FILE" | while read -r result; do
+            file=$(echo "$result" | jq -r '.file')
+            total=$(echo "$result" | jq '[.suites[].tests | length] | add')
+            passed=$(echo "$result" | jq '[.suites[].tests[] | select(.pass == true)] | length')
+            failed=$(echo "$result" | jq '[.suites[].tests[] | select(.fail == true)] | length')
 
-          for report_file in ${REPORT_FILES}; do
-            if [ -f "$report_file" ]; then
-              echo "Processing file: $report_file"
-              
-              # Parse each feature file object in the JSON file
-              jq -c '.results[]' "$report_file" | while read -r feature; do
-                file=$(echo "$feature" | jq -r '.file')  # Get the file path
-                
-                # Initialize counters for this feature file
-                feature_total=0
-                feature_passed=0
-                feature_failed=0
-                
-                # Loop through suites array in the current feature
-                echo "$feature" | jq -c '.suites[]' | while read -r suite; do
-                  # Count tests within the suite
-                  suite_total=$(echo "$suite" | jq '.tests | length')
-                  suite_passed=$(echo "$suite" | jq '.tests[] | select(.pass == true) | length' | awk '{s+=$1} END {print s}')
-                  suite_failed=$(echo "$suite" | jq '.tests[] | select(.fail == true) | length' | awk '{s+=$1} END {print s}')
-                  
-                  # Aggregate suite results into feature-level counters
-                  feature_total=$((feature_total + suite_total))
-                  feature_passed=$((feature_passed + suite_passed))
-                  feature_failed=$((feature_failed + suite_failed))
-                done
-                
-                # Categorize and update the overall counters
-                if [[ "$file" == *"apiTests"* ]]; then
-                  api_total=$((api_total + feature_total))
-                  api_pass=$((api_pass + feature_passed))
-                  api_fail=$((api_fail + feature_failed))
-                elif [[ "$file" == *"uiTests"* ]]; then
-                  ui_total=$((ui_total + feature_total))
-                  ui_pass=$((ui_pass + feature_passed))
-                  ui_fail=$((ui_fail + feature_failed))
-                fi
-              done
+            if [[ "$file" == *"apiTests"* ]]; then
+              api_total=$((api_total + total))
+              api_pass=$((api_pass + passed))
+              api_fail=$((api_fail + failed))
+            elif [[ "$file" == *"uiTests"* ]]; then
+              ui_total=$((ui_total + total))
+              ui_pass=$((ui_pass + passed))
+              ui_fail=$((ui_fail + failed))
             fi
           done
 
-          # Debugging: Print calculated values
-          echo "API Tests - Total: $api_total, Passed: $api_pass, Failed: $api_fail"
-          echo "UI Tests - Total: $ui_total, Passed: $ui_pass, Failed: $ui_fail"
+          # Create Markdown summary
+          echo "| **Test Type** | **Total** | **Passed** | **Failed** |" > test-summary.md
+          echo "|--------------|-----------|------------|------------|" >> test-summary.md
+          echo "| API Tests    | $api_total | $api_pass  | $api_fail  |" >> test-summary.md
+          echo "| UI Tests     | $ui_total  | $ui_pass   | $ui_fail   |" >> test-summary.md
 
-          # Append results to the Markdown file
-          echo "| API Tests    | $api_total      | $api_pass  | $api_fail  |" >> test-report-summary.md
-          echo "| UI Tests     | $ui_total       | $ui_pass   | $ui_fail   |" >> test-report-summary.md
+          # Debugging: Print Markdown file
+          cat test-summary.md
 
-      - name: Comment on PR with test report summary
-        if: always()
+      - name: Post summary as PR comment
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          path: test-report-summary.md
+          path: test-summary.md
           recreate: true
-
-      - name: Make build pass or fail based on test results
-        if: env.build_failed == 'true'
-        run: |
-          echo "Some tests failed. Failing the build."
-          exit 1
