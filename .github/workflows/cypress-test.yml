@@ -79,7 +79,7 @@ jobs:
 
                 # Loop through suites in each feature
                 echo "$feature" | jq -c '.suites[]' | while read -r suite; do
-                  suite_total=$(echo "$suite" | jq '.tests | length')
+                  suite_total=$(echo "$suite" | jq '[.tests[]] | length')
                   suite_passed=$(echo "$suite" | jq '[.tests[] | select(.pass == true)] | length')
                   suite_failed=$(echo "$suite" | jq '[.tests[] | select(.fail == true)] | length')
 
