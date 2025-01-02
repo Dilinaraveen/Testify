@@ -20,5 +20,7 @@
     "title": "new title 1",
     "author": "new author 1"
     }
-
     ```
+  
+- To run specific .feature file (important for API testing)
+  - `npx cypress run --spec "cypress/e2e/apiTests/CreateBook.feature"`

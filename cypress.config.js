@@ -63,33 +63,37 @@ module.exports = defineConfig({
       on('after:run', () => {
         if (jarProcess) {
           console.log('Attempting to stop the JAR process...');
-          const isRunning = isProcessRunning(jarProcess.pid);
-      
-          if (isRunning) {
-            try {
-              // Attempt to stop the process using the process group
-              process.kill(-jarProcess.pid);
-              console.log('JAR process stopped successfully using standard kill.');
-            } catch (error) {
-              console.warn('Standard kill failed. Attempting pkill...', error.message);
-              try {
-                const pkill = spawn('pkill', ['-f', 'demo-0.0.1-SNAPSHOT.jar']);
-                pkill.on('close', (code) => {
-                  if (code === 0) {
-                    console.log('JAR process successfully terminated using pkill.');
-                  } else {
-                    console.error(`pkill failed with exit code ${code}.`);
-                  }
-                });
-              } catch (pkillError) {
-                console.error('Error stopping the JAR process with pkill:', pkillError.message);
-              }
+          const isWindows = process.platform === 'win32';
+
+          try {
+            if (isWindows) {
+              console.log('Started stopping java process in windows platform.');
+              // Use WMIC to terminate all Java processes on Windows
+              const taskkill = spawn('taskkill', ['/F', '/T', '/IM', 'java.exe'], { stdio: 'inherit', shell: true });
+              taskkill.on('close', (code) => {
+                if (code === 0) {
+                  console.log('All Java processes successfully terminated using WMIC.');
+                } else {
+                  console.error(`WMIC command failed with exit code ${code}.`);
+                }
+              });
+            } else {
+              console.log('Started stopping java process in linux platform.');
+              // Use pkill on Unix/Linux
+              const pkill = spawn('pkill', ['-f', 'demo-0.0.1-SNAPSHOT.jar']);
+              pkill.on('close', (code) => {
+                if (code === 0) {
+                  console.log('JAR process successfully terminated using pkill.');
+                } else {
+                  console.error(`pkill failed with exit code ${code}.`);
+                }
+              });
             }
-          } else {
-            console.warn(`Process with PID ${jarProcess.pid} is not running.`);
+          } catch (error) {
+            console.error(`Error stopping the JAR process: ${error.message}`);
+          } finally {
+            jarProcess = null;
           }
-      
-          jarProcess = null;
         } else {
           console.warn('JAR process is not running or already stopped.');
         }
