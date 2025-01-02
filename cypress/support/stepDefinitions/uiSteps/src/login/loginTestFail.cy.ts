@@ -6,7 +6,7 @@ const loginPageObject = new LoginPageObject();
 const LOGIN_FAILED_MSG = '#loginForm > .alert';
 
 Given('the user is on the login page', () => {
-  cy.visit(Cypress.env('BASE_URL'));
+  loginPageObject.visitDashboard();
 });
 
 When('the user enters a invalid username and password and press log in', () => {
