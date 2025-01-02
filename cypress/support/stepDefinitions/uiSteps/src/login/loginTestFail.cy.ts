@@ -1,24 +1,16 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
+import { LoginPageObject } from '../../page-objects/Login';
 
-const USERNAME_INPUT = '#username';
-
-const PASSWORD_INPUT = '#password'
-
-const LOGIN_BUTTON = '#loginForm > .mb-8 > .btn';
+const loginPageObject = new LoginPageObject();
 
 const LOGIN_FAILED_MSG = '#loginForm > .alert';
 
 Given('the user is on the login page', () => {
-  cy.visit(Cypress.env('BASE_URL'));
+  loginPageObject.visitDashboard();
 });
 
-When('the user enters a invalid username and password', () => {
-  cy.get(USERNAME_INPUT).type('wrongusername');
-  cy.get(PASSWORD_INPUT).type(Cypress.env('LOGIN_PASSWORD'));
-});
-
-When('clicks the login button', () => {
-  cy.get(LOGIN_BUTTON).click();
+When('the user enters a invalid username and password and press log in', () => {
+  loginPageObject.signin('wrongusername', Cypress.env('LOGIN_PASSWORD'));
 });
 
 Then('the user should be seen invalid credential message', () => {
