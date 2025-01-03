@@ -43,4 +43,8 @@ Then('the res status should be 200', () => {
   expect(getBooksResponse.status).to.eq(200);
 });
 
+Then('the response should contain a array', () => {
+    expect(getBooksResponse.body).to.be.an('array');
+  });
+
 
