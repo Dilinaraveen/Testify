@@ -1,8 +1,6 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import { PutRequestBookApi } from '../page-objects/PutRequest';
 
-
-
 const putRequestBookApi = new PutRequestBookApi();
 
 
@@ -45,6 +43,8 @@ Then('the response should contain the updated book details', () => {
     author: 'Updated Author Name',
   });
 });
+
+//--------------------------------------------------------------//
 
 When('the Admin sends a PUT request to update a non-existent book', () => {
   cy.request({
@@ -113,3 +113,36 @@ Then('the response message should be Book Already Exists', () => {
   });
 });
 
+//--------------------------------------------------------------//
+
+When('the Admin sends a PUT request to update a book with an empty title', () => {
+  putRequestBookApi.ensureBookExists(1, {
+    id: 1,
+    title: 'Original Book Title',
+    author: 'Original Author Name',
+  });
+
+  cy.request({
+    method: 'PUT',
+    url: `${Cypress.env('API_URL')}/api/books/1`,
+    headers: {
+      Authorization: Cypress.env('API_AUTHORIZATION_ADMIN'),
+    },
+    body: {
+      id: 1,
+      title: '', 
+      author: 'Updated Author Name',
+    },
+    failOnStatusCode: false,
+  }).then((res) => {
+    updateResponse = res;
+  });
+});
+
+Then('the response status code should be 400', () => {
+  expect(updateResponse.status).to.eq(400);
+});
+
+Then('the response message should indicate that Mandatory parameters should not be null', () => {
+  expect(updateResponse.body).to.eq('Mandatory parameters should not be null');
+});

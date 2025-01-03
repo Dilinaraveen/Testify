@@ -22,3 +22,9 @@ Feature: Update a Book
         Then the response status should be 403
         And the response message should be User is not permitted.
 
+    Scenario: Admin attempts to update a book with an empty title
+        Given the Admin is logged in and the API endpoint is ready
+        When the Admin sends a PUT request to update a book with an empty title
+        Then the response status code should be 400
+        And the response message should indicate that Mandatory parameters should not be null
+
