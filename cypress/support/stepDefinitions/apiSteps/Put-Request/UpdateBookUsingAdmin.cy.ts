@@ -1,4 +1,10 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
+import { PutRequestBookApi } from '../page-objects/PutRequest';
+
+
+
+const putRequestBookApi = new PutRequestBookApi();
+
 
 let updateResponse: Cypress.Response<Book>;
 let bookNotFoundResponse: Cypress.Response<{ message: string }>;
@@ -8,33 +14,13 @@ Given('the API endpoint is ready', () => {
   cy.log('API endpoint is ready for updating books');
 });
 
-beforeEach(() => {
-  cy.request({
-    method: 'GET',
-    url: `${Cypress.env('API_URL')}/api/books/1`,
-    headers: {
-      Authorization: Cypress.env('API_AUTHORIZATION_ADMIN'),
-    },
-    failOnStatusCode: false,
-  }).then((res) => {
-    if (res.status === 404) {
-      cy.request({
-        method: 'POST',
-        url: `${Cypress.env('API_URL')}/api/books`,
-        headers: {
-          Authorization: Cypress.env('API_AUTHORIZATION_ADMIN'),
-        },
-        body: {
-          id: 1,
-          title: 'Original Book Title',
-          author: 'Original Author Name',
-        },
-      });
-    }
-  });
-});
-
 When('the Admin sends a PUT request to update a book', () => {
+  putRequestBookApi.ensureBookExists(1, {
+    id: 1,
+    title: 'Original Book Title',
+    author: 'Original Author Name',
+  });
+
   cy.request({
     method: 'PUT',
     url: `${Cypress.env('API_URL')}/api/books/1`,
@@ -84,6 +70,12 @@ Then('the response should indicate the book does not exist', () => {
 });
 
 When('the Admin sends a PUT request to update a book with identical existing data', () => {
+  putRequestBookApi.ensureBookExists(1, {
+    id: 1,
+    title: 'Updated Book Title',
+    author: 'Updated Author Name',
+  });
+
   cy.request({
     method: 'PUT',
     url: `${Cypress.env('API_URL')}/api/books/1`,
