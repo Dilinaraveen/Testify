@@ -8,7 +8,7 @@ Given('the API endpoint is ready', () => {
   cy.log('API endpoint is ready');
 });
 
-When('the user sends a POST request to create a book', () => {
+When('the admin sends a POST request to create a book', () => {
   cy.request({
     method: 'POST',
     url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
@@ -34,7 +34,7 @@ Then('the response should contain the created book', () => {
   });
 });
 
-When('the user tries to create the same book again', () => {
+When('the admin tries to create the same book again', () => {
     cy.request({
       method: 'POST',
       url: `${Cypress.env('API_URL')}/api/books`,
@@ -56,7 +56,7 @@ When('the user tries to create the same book again', () => {
     expect(alreadyExistResponse.body).to.eq('Book Already Exists');
   });
 
-  When('the user sends a POST request without request body to create a book', () => {
+  When('the admin sends a POST request without request body to create a book', () => {
     cy.request({
       method: 'POST',
       url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
