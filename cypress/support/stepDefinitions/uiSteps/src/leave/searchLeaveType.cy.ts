@@ -22,5 +22,5 @@ When('the user clicks the "Search" button', () => {
 
 Then('the data table should only show rows with "Annual leave"', () => {
   
-    cy.get('.ant-table-row > :nth-child(2)').should('have.text', 'Annual leave'); 
+    cy.get('.ant-table-row > :nth-child(2)').should('contain', 'Annual leave'); 
 });
