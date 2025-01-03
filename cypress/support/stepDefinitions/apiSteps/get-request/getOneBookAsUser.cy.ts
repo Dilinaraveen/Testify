@@ -18,7 +18,7 @@ When('the user sends a GET request to retrieve a book', () => {
   });
 });
 
-Then('the response should contain the details of the requested book with status code 200', () => {
+Then('the response should contain the details of the requested book with status code 200 or return a Book not found error with status code 404', () => {
   expect(response.status).to.eq(200); 
   expect(response.body).to.deep.equal({
     "id": 1,

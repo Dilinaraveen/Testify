@@ -18,7 +18,7 @@ When('the admin sends a GET request to retrieve a book', () => {
   });
 });
 
-Then('the response should contain the details of the requested book with status code 200', () => {
+Then('the response should contain the details of the requested book with status code 200 or return a Book not found error with status code 404', () => {
     if (response.status === 200) {
     expect(response.status).to.eq(200); 
     expect(response.body).to.deep.equal({
@@ -26,7 +26,7 @@ Then('the response should contain the details of the requested book with status 
         "title": "new title",
         "author": "new author"
     });; 
-  } else if (response.status === 404) {
+  } else if (response.status === 404) { 
     expect(response.status).to.eq(404); 
     expect(response.body).to.have.property('message', 'Book not found'); // Validate error message
   } else {
