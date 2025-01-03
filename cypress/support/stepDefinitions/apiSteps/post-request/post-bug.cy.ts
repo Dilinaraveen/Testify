@@ -6,7 +6,7 @@ Given('the API endpoint is ready', () => {
     cy.log('API endpoint is ready');
 });
 
-When('the user sends a POST request without title to create a book', () => {
+When('the admin sends a POST request without title to create a book', () => {
     cy.request({
         method: 'POST',
         url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
@@ -27,7 +27,7 @@ Then('the response should be bad request', () => {
     expect(response.status).to.eq(400); // Check for BAD REQUEST status code
 });
 
-When('the user sends a POST request without author to create a book', () => {
+When('the admin sends a POST request without author to create a book', () => {
     cy.request({
         method: 'POST',
         url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
@@ -48,7 +48,7 @@ Then('the response should be bad request', () => {
     expect(response.status).to.eq(400); // Check for BAD REQUEST status code
 });
 
-When('the user sends a POST request with author as numeric value', () => {
+When('the admin sends a POST request with author as numeric value', () => {
     cy.request({
         method: 'POST',
         url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
@@ -65,6 +65,6 @@ When('the user sends a POST request with author as numeric value', () => {
     });
 });
 
-Then('the response should be bad request', () => {
+Then('the admin should be bad request', () => {
     expect(response.status).to.eq(400); // Check for BAD REQUEST status code
 });
