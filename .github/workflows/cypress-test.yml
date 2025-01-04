@@ -87,3 +87,10 @@ jobs:
         run: |
           echo "Some tests failed. Failing the build."
           exit 1
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: cypress/reports
+          publish_branch: gh-pages
