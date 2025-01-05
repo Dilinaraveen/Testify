@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:42:32.531Z",
-    "end": "2025-01-05T03:42:40.042Z",
-    "duration": 7511,
+    "start": "2025-01-05T03:56:17.831Z",
+    "end": "2025-01-05T03:56:25.914Z",
+    "duration": 8083,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "085f8924-ffc4-4f47-9842-a5eb342d96d5",
+      "uuid": "d314c021-5cb4-411b-8328-b4faf7298a30",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/document/document.feature",
       "file": "cypress/e2e/uiTests/document/document.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+          "uuid": "4c823083-c1cd-40ee-9402-394178627753",
           "title": "Document functionality",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User create a document type",
               "fullTitle": "Document functionality User create a document type",
               "timedOut": null,
-              "duration": 4156,
+              "duration": 4526,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "4c3b8ecf-e604-41d5-af61-b6aa6dc28a1d",
-              "parentUUID": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+              "uuid": "c1cbdbc0-1fab-444e-ad08-c70eb2a77df9",
+              "parentUUID": "4c823083-c1cd-40ee-9402-394178627753",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "User edit a document type",
               "fullTitle": "Document functionality User edit a document type",
               "timedOut": null,
-              "duration": 1100,
+              "duration": 1179,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "c4845821-f7ce-4a51-85eb-bead74924cd3",
-              "parentUUID": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+              "uuid": "f990bbb0-abfb-41bb-8543-6b1798cadee1",
+              "parentUUID": "4c823083-c1cd-40ee-9402-394178627753",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "User delete a document type",
               "fullTitle": "Document functionality User delete a document type",
               "timedOut": null,
-              "duration": 1978,
+              "duration": 2101,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "9c733d49-6104-461b-9795-de503b4d63a9",
-              "parentUUID": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+              "uuid": "f0dd2772-41c0-42bf-98e0-64f4344a5034",
+              "parentUUID": "4c823083-c1cd-40ee-9402-394178627753",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4c3b8ecf-e604-41d5-af61-b6aa6dc28a1d",
-            "c4845821-f7ce-4a51-85eb-bead74924cd3",
-            "9c733d49-6104-461b-9795-de503b4d63a9"
+            "c1cbdbc0-1fab-444e-ad08-c70eb2a77df9",
+            "f990bbb0-abfb-41bb-8543-6b1798cadee1",
+            "f0dd2772-41c0-42bf-98e0-64f4344a5034"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7234,
+          "duration": 7806,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

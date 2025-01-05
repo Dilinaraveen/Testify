@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:56.379Z",
-    "end": "2025-01-05T03:44:00.647Z",
-    "duration": 4268,
+    "start": "2025-01-05T03:57:48.353Z",
+    "end": "2025-01-05T03:57:52.936Z",
+    "duration": 4583,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "161ebdc6-1f52-40f6-8e24-0695bde0215f",
+      "uuid": "d6dbdeba-03e0-4187-93a7-551fc1a66120",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/training/addNewCourseValidation.feature",
       "file": "cypress/e2e/uiTests/training/addNewCourseValidation.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "360305d3-2bfc-4fb5-a342-851fab28040c",
+          "uuid": "01dbd98c-8434-4555-81f9-4d1ae64e0667",
           "title": "Add New Course Validation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User attempts to add a new course without filling in required fields",
               "fullTitle": "Add New Course Validation User attempts to add a new course without filling in required fields",
               "timedOut": null,
-              "duration": 4223,
+              "duration": 4527,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "b86db863-8174-4bb9-970d-60d62070f499",
-              "parentUUID": "360305d3-2bfc-4fb5-a342-851fab28040c",
+              "uuid": "3149e69f-c07e-4f81-ac0a-fdf6577b2085",
+              "parentUUID": "01dbd98c-8434-4555-81f9-4d1ae64e0667",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b86db863-8174-4bb9-970d-60d62070f499"
+            "3149e69f-c07e-4f81-ac0a-fdf6577b2085"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4223,
+          "duration": 4527,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

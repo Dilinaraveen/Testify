@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:09.860Z",
-    "end": "2025-01-05T03:43:15.812Z",
-    "duration": 5952,
+    "start": "2025-01-05T03:56:58.509Z",
+    "end": "2025-01-05T03:57:05.160Z",
+    "duration": 6651,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "6047bd33-7212-42c6-94cb-c885c41deeb1",
+      "uuid": "6462c956-8308-4a0c-b15a-36faaf4a482e",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/leave/editLeaveType.feature",
       "file": "cypress/e2e/uiTests/leave/editLeaveType.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "793c2e6f-7d4f-4705-832d-034777ce6e5e",
+          "uuid": "c3147f69-3dda-48ba-baed-c401c203ebf6",
           "title": "Edit LeaveType",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User selects the leave type and edit the leave type",
               "fullTitle": "Edit LeaveType User selects the leave type and edit the leave type",
               "timedOut": null,
-              "duration": 5897,
+              "duration": 6592,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "2c128657-da15-4c20-aff8-a66a9cff2218",
-              "parentUUID": "793c2e6f-7d4f-4705-832d-034777ce6e5e",
+              "uuid": "e7a3f2d6-9bd6-49b6-a90e-37544c15f822",
+              "parentUUID": "c3147f69-3dda-48ba-baed-c401c203ebf6",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2c128657-da15-4c20-aff8-a66a9cff2218"
+            "e7a3f2d6-9bd6-49b6-a90e-37544c15f822"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5897,
+          "duration": 6592,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

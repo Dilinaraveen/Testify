@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-01-05T03:41:26.320Z",
-    "end": "2025-01-05T03:41:29.244Z",
-    "duration": 2924,
+    "start": "2025-01-05T03:55:06.511Z",
+    "end": "2025-01-05T03:55:09.682Z",
+    "duration": 3171,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ce21034b-c63a-4429-a3d9-8bc86573a7aa",
+      "uuid": "b289fb90-949f-4647-8c33-137cfa917b2a",
       "title": "",
       "fullFile": "cypress/e2e/APITests/GetAllBookList.feature",
       "file": "cypress/e2e/APITests/GetAllBookList.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9255b2a4-5229-46a3-93ef-15908989aff8",
+          "uuid": "c286611a-f5be-4afe-9149-67a0921dbfdf",
           "title": "Get All Book List",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Retrieve all books when no records exist",
               "fullTitle": "Get All Book List Retrieve all books when no records exist",
               "timedOut": null,
-              "duration": 2697,
+              "duration": 2921,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: expected [ Array(2) ] to be empty\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Get-Request/GetAllBookList.cy.ts:26:60)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": null
               },
-              "uuid": "9ea5fc8c-1e6e-4280-ae49-bc1caa3378e2",
-              "parentUUID": "9255b2a4-5229-46a3-93ef-15908989aff8",
+              "uuid": "1cd73e3b-85af-480c-8788-c16fb0e8fb6e",
+              "parentUUID": "c286611a-f5be-4afe-9149-67a0921dbfdf",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Successfully retrieve all books",
               "fullTitle": "Get All Book List Successfully retrieve all books",
               "timedOut": null,
-              "duration": 144,
+              "duration": 156,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -69,22 +69,22 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "5b9ef94c-9c59-4809-92bb-deeb144f864f",
-              "parentUUID": "9255b2a4-5229-46a3-93ef-15908989aff8",
+              "uuid": "025e476f-38c6-4fe8-8ad7-881097c1f606",
+              "parentUUID": "c286611a-f5be-4afe-9149-67a0921dbfdf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5b9ef94c-9c59-4809-92bb-deeb144f864f"
+            "025e476f-38c6-4fe8-8ad7-881097c1f606"
           ],
           "failures": [
-            "9ea5fc8c-1e6e-4280-ae49-bc1caa3378e2"
+            "1cd73e3b-85af-480c-8788-c16fb0e8fb6e"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 2841,
+          "duration": 3077,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

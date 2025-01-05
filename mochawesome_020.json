@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:33.314Z",
-    "end": "2025-01-05T03:43:36.800Z",
-    "duration": 3486,
+    "start": "2025-01-05T03:57:23.706Z",
+    "end": "2025-01-05T03:57:27.506Z",
+    "duration": 3800,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5906dc76-359f-4a30-b20c-f055bd7a3eed",
+      "uuid": "1068afae-05ab-4c0f-9886-08cb771a79e6",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/leave/leaveTypeModalOpen.feature",
       "file": "cypress/e2e/uiTests/leave/leaveTypeModalOpen.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "575c59d3-654b-4907-beab-e916ea37d033",
+          "uuid": "976552c6-9392-439b-941c-0600403f9c17",
           "title": "Add Leave Type Modal",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Successfully open the \"LeaveType\" modal when the \"Add New\" button is clicked",
               "fullTitle": "Add Leave Type Modal Successfully open the \"LeaveType\" modal when the \"Add New\" button is clicked",
               "timedOut": null,
-              "duration": 3425,
+              "duration": 3708,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "a0e216e5-4fba-46ac-80bf-96e91080d22d",
-              "parentUUID": "575c59d3-654b-4907-beab-e916ea37d033",
+              "uuid": "ee7bd23c-969b-431a-972d-d37509c2cd05",
+              "parentUUID": "976552c6-9392-439b-941c-0600403f9c17",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a0e216e5-4fba-46ac-80bf-96e91080d22d"
+            "ee7bd23c-969b-431a-972d-d37509c2cd05"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3425,
+          "duration": 3708,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

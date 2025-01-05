@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-01-05T03:41:20.332Z",
-    "end": "2025-01-05T03:41:23.307Z",
-    "duration": 2975,
+    "start": "2025-01-05T03:55:00.031Z",
+    "end": "2025-01-05T03:55:03.288Z",
+    "duration": 3257,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5c116314-22a1-415e-98d2-864f75ac9b25",
+      "uuid": "a8f480fd-4bd8-489e-b68a-b4eb89ae7ace",
       "title": "",
       "fullFile": "cypress/e2e/APITests/DeleteBookUsingUser.feature",
       "file": "cypress/e2e/APITests/DeleteBookUsingUser.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "da135f4a-386e-438b-90b3-91a16b178663",
+          "uuid": "231ba5cf-baa5-4b63-b6d3-7229e1df6b70",
           "title": "Delete a book",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Delete a book using User login",
               "fullTitle": "Delete a book Delete a book using User login",
               "timedOut": null,
-              "duration": 2915,
+              "duration": 3202,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: expected 200 to equal 403\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Delete-Request/DeleteRequestAsUser.cy.ts:23:29)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": "- 200\n+ 403\n"
               },
-              "uuid": "3b3a06c3-3b88-4681-a343-774d10326393",
-              "parentUUID": "da135f4a-386e-438b-90b3-91a16b178663",
+              "uuid": "79fa13f4-3457-48f9-924b-9ab1a4a2ff46",
+              "parentUUID": "231ba5cf-baa5-4b63-b6d3-7229e1df6b70",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "3b3a06c3-3b88-4681-a343-774d10326393"
+            "79fa13f4-3457-48f9-924b-9ab1a4a2ff46"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 2915,
+          "duration": 3202,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 3,
-    "start": "2025-01-05T03:41:32.171Z",
-    "end": "2025-01-05T03:41:35.670Z",
-    "duration": 3499,
+    "start": "2025-01-05T03:55:12.815Z",
+    "end": "2025-01-05T03:55:16.643Z",
+    "duration": 3828,
     "testsRegistered": 5,
     "passPercent": 40,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "97abd4c2-cf33-4584-9576-5d4c14925de0",
+      "uuid": "75aa5f34-a0cb-4d5a-b9f9-c857d4583162",
       "title": "",
       "fullFile": "cypress/e2e/APITests/UpdateBook.feature",
       "file": "cypress/e2e/APITests/UpdateBook.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+          "uuid": "09e69f58-aaf8-4536-a145-c06b520a706e",
           "title": "Update a Book",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Successfully update a book with Admin login",
               "fullTitle": "Update a Book Successfully update a book with Admin login",
               "timedOut": null,
-              "duration": 2711,
+              "duration": 2979,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "c23e2d91-4513-4b83-987c-2283a18abb68",
-              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "uuid": "8504cf7d-9694-4304-a01a-a16af3e89569",
+              "parentUUID": "09e69f58-aaf8-4536-a145-c06b520a706e",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Attempt to update a non-existent book",
               "fullTitle": "Update a Book Attempt to update a non-existent book",
               "timedOut": null,
-              "duration": 143,
+              "duration": 149,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "7fbd10eb-452c-4324-bdbb-b8d0f6b23c5e",
-              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "uuid": "361b543e-6a37-4565-8c91-6786e3dd65b6",
+              "parentUUID": "09e69f58-aaf8-4536-a145-c06b520a706e",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Attempt to update a book with an existing name but different ID and author",
               "fullTitle": "Update a Book Attempt to update a book with an existing name but different ID and author",
               "timedOut": null,
-              "duration": 157,
+              "duration": 179,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -87,8 +87,8 @@
                 "estack": "AssertionError: expected 208 to equal 200\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Put-Request/UpdateBookUsingAdmin.cy.ts:105:42)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": "- 208\n+ 200\n"
               },
-              "uuid": "2193b95b-eea4-49ec-b092-1e577c6de768",
-              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "uuid": "6c26ee35-af57-438b-a18e-20cabe4e4166",
+              "parentUUID": "09e69f58-aaf8-4536-a145-c06b520a706e",
               "isHook": false,
               "skipped": false
             },
@@ -96,7 +96,7 @@
               "title": "User attempts to update a book with User login",
               "fullTitle": "Update a Book User attempts to update a book with User login",
               "timedOut": null,
-              "duration": 139,
+              "duration": 153,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -109,8 +109,8 @@
                 "estack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Delete-Request/DeleteRequestAsUser.cy.ts:23:18)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": null
               },
-              "uuid": "d556f6e4-c832-4060-9f62-a1ccc0f44afd",
-              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "uuid": "cb66dfc6-e9be-4e97-9df2-38d98dc1a16c",
+              "parentUUID": "09e69f58-aaf8-4536-a145-c06b520a706e",
               "isHook": false,
               "skipped": false
             },
@@ -118,7 +118,7 @@
               "title": "Admin attempts to update a book with an empty title",
               "fullTitle": "Update a Book Admin attempts to update a book with an empty title",
               "timedOut": null,
-              "duration": 155,
+              "duration": 171,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -131,25 +131,25 @@
                 "estack": "AssertionError: expected 200 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Put-Request/UpdateBookUsingAdmin.cy.ts:143:35)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": "- 200\n+ 400\n"
               },
-              "uuid": "9a43ad13-1ea3-42a9-9f9b-3dee25f947ac",
-              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "uuid": "90bddd69-996c-42b9-9e06-bbbd11c8068e",
+              "parentUUID": "09e69f58-aaf8-4536-a145-c06b520a706e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c23e2d91-4513-4b83-987c-2283a18abb68",
-            "7fbd10eb-452c-4324-bdbb-b8d0f6b23c5e"
+            "8504cf7d-9694-4304-a01a-a16af3e89569",
+            "361b543e-6a37-4565-8c91-6786e3dd65b6"
           ],
           "failures": [
-            "2193b95b-eea4-49ec-b092-1e577c6de768",
-            "d556f6e4-c832-4060-9f62-a1ccc0f44afd",
-            "9a43ad13-1ea3-42a9-9f9b-3dee25f947ac"
+            "6c26ee35-af57-438b-a18e-20cabe4e4166",
+            "cb66dfc6-e9be-4e97-9df2-38d98dc1a16c",
+            "90bddd69-996c-42b9-9e06-bbbd11c8068e"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 3305,
+          "duration": 3631,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

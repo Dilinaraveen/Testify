@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:41:44.964Z",
-    "end": "2025-01-05T03:41:48.366Z",
-    "duration": 3402,
+    "start": "2025-01-05T03:55:26.296Z",
+    "end": "2025-01-05T03:55:30.656Z",
+    "duration": 4360,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2d22ffad-87dc-427f-b7f3-4a9ccabf3dca",
+      "uuid": "af036cfe-08fa-4f45-9df5-1ed03bb0a60c",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/Attendence/AddNewBtn.feature",
       "file": "cypress/e2e/uiTests/Attendence/AddNewBtn.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "646da268-dbd1-45b6-ad8b-4af5f9c2d794",
+          "uuid": "24934c90-3e52-4582-9054-06d00fe077ec",
           "title": "Functionality of Add new Button Click",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Open the Add New popup When AddNew Button click",
               "fullTitle": "Functionality of Add new Button Click Open the Add New popup When AddNew Button click",
               "timedOut": null,
-              "duration": 3351,
+              "duration": 4303,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "a148e00f-d56d-49b2-b32e-4c6335558e29",
-              "parentUUID": "646da268-dbd1-45b6-ad8b-4af5f9c2d794",
+              "uuid": "c32b35d7-e6b0-4e34-bd65-6d699b81c3ff",
+              "parentUUID": "24934c90-3e52-4582-9054-06d00fe077ec",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a148e00f-d56d-49b2-b32e-4c6335558e29"
+            "c32b35d7-e6b0-4e34-bd65-6d699b81c3ff"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3351,
+          "duration": 4303,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

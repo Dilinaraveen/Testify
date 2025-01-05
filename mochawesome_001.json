@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-01-05T03:41:08.426Z",
-    "end": "2025-01-05T03:41:11.418Z",
-    "duration": 2992,
+    "start": "2025-01-05T03:54:47.037Z",
+    "end": "2025-01-05T03:54:50.153Z",
+    "duration": 3116,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "00cf3521-34f4-4ceb-ba69-8d95b0aa89c6",
+      "uuid": "39206f86-529c-43e8-a9d9-bcca829e292e",
       "title": "",
       "fullFile": "cypress/e2e/APITests/CreateBookUser.feature",
       "file": "cypress/e2e/APITests/CreateBookUser.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "be4c8e31-73a6-44c7-a887-757452da0330",
+          "uuid": "580c54d4-469f-4236-8f27-d549082acd29",
           "title": "User create a book",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User successfully create a book",
               "fullTitle": "User create a book User successfully create a book",
               "timedOut": null,
-              "duration": 2772,
+              "duration": 2878,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "5451adfa-3467-4012-bec4-8bbbe9a16bea",
-              "parentUUID": "be4c8e31-73a6-44c7-a887-757452da0330",
+              "uuid": "0dbf6f89-2ad2-47f1-ae2c-f11775b8bada",
+              "parentUUID": "580c54d4-469f-4236-8f27-d549082acd29",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "User attempt to create a book without mandatory author field",
               "fullTitle": "User create a book User attempt to create a book without mandatory author field",
               "timedOut": null,
-              "duration": 143,
+              "duration": 159,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -69,22 +69,22 @@
                 "estack": "AssertionError: expected 201 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/post-request/post-bug.cy.ts:89:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": "- 201\n+ 400\n"
               },
-              "uuid": "ab6d9073-8c15-4a62-a47b-67416cfab164",
-              "parentUUID": "be4c8e31-73a6-44c7-a887-757452da0330",
+              "uuid": "5ada027d-4051-4a0e-bf17-066b8bda7de8",
+              "parentUUID": "580c54d4-469f-4236-8f27-d549082acd29",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5451adfa-3467-4012-bec4-8bbbe9a16bea"
+            "0dbf6f89-2ad2-47f1-ae2c-f11775b8bada"
           ],
           "failures": [
-            "ab6d9073-8c15-4a62-a47b-67416cfab164"
+            "5ada027d-4051-4a0e-bf17-066b8bda7de8"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 2915,
+          "duration": 3037,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

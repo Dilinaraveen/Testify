@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:39.894Z",
-    "end": "2025-01-05T03:43:43.838Z",
-    "duration": 3944,
+    "start": "2025-01-05T03:57:30.737Z",
+    "end": "2025-01-05T03:57:34.818Z",
+    "duration": 4081,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3158c51b-34b7-4ac3-878c-41a302b824d0",
+      "uuid": "998ee1bb-5c25-45c9-9c39-d3ce24e58738",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/leave/searchLeaveType.feature",
       "file": "cypress/e2e/uiTests/leave/searchLeaveType.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e0233c7b-55c6-495a-a184-7c80f8d474cf",
+          "uuid": "f75ec5ef-b8cf-4119-b196-db9916666568",
           "title": "Search Leave Type",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Search for \"Annual Leave\" in the search bar",
               "fullTitle": "Search Leave Type Search for \"Annual Leave\" in the search bar",
               "timedOut": null,
-              "duration": 3885,
+              "duration": 4008,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "a6a12299-9d33-4f45-879a-a19df7344c01",
-              "parentUUID": "e0233c7b-55c6-495a-a184-7c80f8d474cf",
+              "uuid": "986b637b-6f66-43ba-bb96-899432f641ee",
+              "parentUUID": "f75ec5ef-b8cf-4119-b196-db9916666568",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a6a12299-9d33-4f45-879a-a19df7344c01"
+            "986b637b-6f66-43ba-bb96-899432f641ee"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3885,
+          "duration": 4008,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

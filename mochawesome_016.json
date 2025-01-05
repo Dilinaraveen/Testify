@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:02.494Z",
-    "end": "2025-01-05T03:43:06.611Z",
-    "duration": 4117,
+    "start": "2025-01-05T03:56:50.683Z",
+    "end": "2025-01-05T03:56:55.106Z",
+    "duration": 4423,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "710f019e-b1b9-4c14-b1c7-640691240b8d",
+      "uuid": "092d3cb5-3099-4896-a985-31cdde398418",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/leave/addNewLeaveTypeValidation.feature",
       "file": "cypress/e2e/uiTests/leave/addNewLeaveTypeValidation.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "015ab193-5d37-4971-a614-ed6cddb501b1",
+          "uuid": "8fc92888-86aa-4e77-8793-b89ba348575d",
           "title": "Add New Leave Type Validation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User attempts to add a new leave type without filling in required fields",
               "fullTitle": "Add New Leave Type Validation User attempts to add a new leave type without filling in required fields",
               "timedOut": null,
-              "duration": 4071,
+              "duration": 4361,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "12f14a0e-72fc-430b-bbfb-d054d77b5ff7",
-              "parentUUID": "015ab193-5d37-4971-a614-ed6cddb501b1",
+              "uuid": "972fc5f9-a8b9-465f-ac1c-cfabd3311009",
+              "parentUUID": "8fc92888-86aa-4e77-8793-b89ba348575d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "12f14a0e-72fc-430b-bbfb-d054d77b5ff7"
+            "972fc5f9-a8b9-465f-ac1c-cfabd3311009"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4071,
+          "duration": 4361,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

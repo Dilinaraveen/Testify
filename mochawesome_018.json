@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:19.050Z",
-    "end": "2025-01-05T03:43:22.652Z",
-    "duration": 3602,
+    "start": "2025-01-05T03:57:08.436Z",
+    "end": "2025-01-05T03:57:12.152Z",
+    "duration": 3716,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f61e2807-a696-4d26-bcda-157384ec932f",
+      "uuid": "f5056f78-76ff-423c-8530-1a1a9cd1c6a1",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/leave/filtersModalOpen.feature",
       "file": "cypress/e2e/uiTests/leave/filtersModalOpen.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0f14430b-bd85-4bab-b054-8e29572b19e9",
+          "uuid": "42426353-78f5-47ed-8cbd-b20f85c206b8",
           "title": "Filter Leave Types",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Open the \"Filter\" modal and verify its header",
               "fullTitle": "Filter Leave Types Open the \"Filter\" modal and verify its header",
               "timedOut": null,
-              "duration": 3556,
+              "duration": 3646,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "446ed060-6687-4420-8340-c05cc11b1c94",
-              "parentUUID": "0f14430b-bd85-4bab-b054-8e29572b19e9",
+              "uuid": "c4f0832e-2347-47a1-9946-00400ee80bcd",
+              "parentUUID": "42426353-78f5-47ed-8cbd-b20f85c206b8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "446ed060-6687-4420-8340-c05cc11b1c94"
+            "c4f0832e-2347-47a1-9946-00400ee80bcd"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3556,
+          "duration": 3646,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

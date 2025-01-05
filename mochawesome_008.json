@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:41:51.334Z",
-    "end": "2025-01-05T03:41:55.321Z",
-    "duration": 3987,
+    "start": "2025-01-05T03:55:33.860Z",
+    "end": "2025-01-05T03:55:38.127Z",
+    "duration": 4267,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a42a3a88-c73b-4cd0-b42c-7b6f4f694147",
+      "uuid": "bd1ec4f4-eb77-40cb-bf1e-7bfeab68fe7b",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/Attendence/CheckAttendenceVisible.feature",
       "file": "cypress/e2e/uiTests/Attendence/CheckAttendenceVisible.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a982de36-392d-4513-a0cb-2919d207bcdb",
+          "uuid": "c77943bb-9cb7-40fa-8ae7-61e4fefd856b",
           "title": "Functionality of Manage Drop Down",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Open the Manage Drop dwon when user click on it",
               "fullTitle": "Functionality of Manage Drop Down Open the Manage Drop dwon when user click on it",
               "timedOut": null,
-              "duration": 3927,
+              "duration": 4028,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "5fd53edc-21ca-4ebc-a219-bf91a1eab573",
-              "parentUUID": "a982de36-392d-4513-a0cb-2919d207bcdb",
+              "uuid": "688ff38c-5773-43a3-b386-a985155981e6",
+              "parentUUID": "c77943bb-9cb7-40fa-8ae7-61e4fefd856b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5fd53edc-21ca-4ebc-a219-bf91a1eab573"
+            "688ff38c-5773-43a3-b386-a985155981e6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3927,
+          "duration": 4028,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

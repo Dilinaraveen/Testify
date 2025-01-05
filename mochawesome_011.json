@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:42:11.939Z",
-    "end": "2025-01-05T03:42:16.564Z",
-    "duration": 4625,
+    "start": "2025-01-05T03:55:55.736Z",
+    "end": "2025-01-05T03:56:00.723Z",
+    "duration": 4987,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "af44f664-fe03-4b71-8341-dfbef814807d",
+      "uuid": "43018f7f-a6f2-4c77-9a17-68c0164a3363",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/Loans/deleteLoanTypeRecord.feature",
       "file": "cypress/e2e/uiTests/Loans/deleteLoanTypeRecord.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "447dd78c-f208-45ba-b642-6d040b92dd6d",
+          "uuid": "984afb03-4ff5-49b0-8bb8-54f940a948d0",
           "title": "Delete Loan Type Record",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Successfully delete a loan type record",
               "fullTitle": "Delete Loan Type Record Successfully delete a loan type record",
               "timedOut": null,
-              "duration": 4576,
+              "duration": 4931,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "ee093b36-f750-4144-b7a1-814da40bd966",
-              "parentUUID": "447dd78c-f208-45ba-b642-6d040b92dd6d",
+              "uuid": "9d2d7ac0-611c-4b30-80e9-4220946fbbcb",
+              "parentUUID": "984afb03-4ff5-49b0-8bb8-54f940a948d0",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ee093b36-f750-4144-b7a1-814da40bd966"
+            "9d2d7ac0-611c-4b30-80e9-4220946fbbcb"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4576,
+          "duration": 4931,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

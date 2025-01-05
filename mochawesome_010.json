@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:42:05.129Z",
-    "end": "2025-01-05T03:42:08.869Z",
-    "duration": 3740,
+    "start": "2025-01-05T03:55:48.523Z",
+    "end": "2025-01-05T03:55:52.494Z",
+    "duration": 3971,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "87bc5e4e-02f2-43e1-b5f9-ee4a3b32e5a3",
+      "uuid": "b97216c2-a007-4255-aee9-7e4540651035",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/Attendence/FilterButtonFunctionality.feature",
       "file": "cypress/e2e/uiTests/Attendence/FilterButtonFunctionality.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6d3f688a-c22e-4afe-a446-848ff49fe659",
+          "uuid": "68b60b26-cd13-43ce-8aa8-8921f1667045",
           "title": "Check Functionality of Filter Button",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User choose an Employee to Filter data",
               "fullTitle": "Check Functionality of Filter Button User choose an Employee to Filter data",
               "timedOut": null,
-              "duration": 3670,
+              "duration": 3902,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "fc24ffe4-f65c-429f-8e9a-eff5b392dd2f",
-              "parentUUID": "6d3f688a-c22e-4afe-a446-848ff49fe659",
+              "uuid": "7f8f0e38-7b15-48b1-9c3a-260659e27e53",
+              "parentUUID": "68b60b26-cd13-43ce-8aa8-8921f1667045",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "fc24ffe4-f65c-429f-8e9a-eff5b392dd2f"
+            "7f8f0e38-7b15-48b1-9c3a-260659e27e53"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3670,
+          "duration": 3902,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

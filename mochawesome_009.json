@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:41:58.241Z",
-    "end": "2025-01-05T03:42:02.059Z",
-    "duration": 3818,
+    "start": "2025-01-05T03:55:41.247Z",
+    "end": "2025-01-05T03:55:45.356Z",
+    "duration": 4109,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "56b098c5-c0d1-4568-8c14-4a289954df8f",
+      "uuid": "fae408bd-9624-4f70-898b-d30a310030a2",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/Attendence/CheckValidationOfAddNewData.feature",
       "file": "cypress/e2e/uiTests/Attendence/CheckValidationOfAddNewData.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b23b56dd-314f-406c-ad31-3c75df4a76f3",
+          "uuid": "87021417-2d23-4c63-aa4f-d8b400a1acdf",
           "title": "Alert When Empty Text Box Present",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Show Alert when user click save with empty Text Boxes",
               "fullTitle": "Alert When Empty Text Box Present Show Alert when user click save with empty Text Boxes",
               "timedOut": null,
-              "duration": 3770,
+              "duration": 4061,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "222992a4-3036-4046-b101-09db159bed68",
-              "parentUUID": "b23b56dd-314f-406c-ad31-3c75df4a76f3",
+              "uuid": "038cdd70-b4a6-4b77-a952-3a820038713b",
+              "parentUUID": "87021417-2d23-4c63-aa4f-d8b400a1acdf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "222992a4-3036-4046-b101-09db159bed68"
+            "038cdd70-b4a6-4b77-a952-3a820038713b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3770,
+          "duration": 4061,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

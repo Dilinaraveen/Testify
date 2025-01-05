@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:43:46.943Z",
-    "end": "2025-01-05T03:43:53.302Z",
-    "duration": 6359,
+    "start": "2025-01-05T03:57:38.069Z",
+    "end": "2025-01-05T03:57:45.044Z",
+    "duration": 6975,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "9244dc95-f2f4-4282-bb7b-19d60bc3951e",
+      "uuid": "3e628d01-80ed-4f43-95dd-f935964be0e9",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/login/Login.feature",
       "file": "cypress/e2e/uiTests/login/Login.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+          "uuid": "72cbe38e-c590-446e-b05b-2ed488c9fb56",
           "title": "Login functionality",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User logs in to the system Successfully",
               "fullTitle": "Login functionality User logs in to the system Successfully",
               "timedOut": null,
-              "duration": 2595,
+              "duration": 2839,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "4286250e-76c4-4976-876d-933f0f01436d",
-              "parentUUID": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+              "uuid": "2fc80470-b68f-4c84-8612-8a2d11e4e72d",
+              "parentUUID": "72cbe38e-c590-446e-b05b-2ed488c9fb56",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "User fails to logs in to the system",
               "fullTitle": "Login functionality User fails to logs in to the system",
               "timedOut": null,
-              "duration": 1046,
+              "duration": 1168,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "000ce76c-18b0-438c-ac79-cfd5c12c1ac8",
-              "parentUUID": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+              "uuid": "83fc4b26-f0d7-49a6-a0a2-69f997cafd89",
+              "parentUUID": "72cbe38e-c590-446e-b05b-2ed488c9fb56",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "User logs out of the the system Successfully",
               "fullTitle": "Login functionality User logs out of the the system Successfully",
               "timedOut": null,
-              "duration": 2595,
+              "duration": 2849,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "9106101c-cfed-4342-af4e-9ae7a5d31155",
-              "parentUUID": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+              "uuid": "61379be8-bdd9-406d-a0eb-dfca04d76907",
+              "parentUUID": "72cbe38e-c590-446e-b05b-2ed488c9fb56",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4286250e-76c4-4976-876d-933f0f01436d",
-            "000ce76c-18b0-438c-ac79-cfd5c12c1ac8",
-            "9106101c-cfed-4342-af4e-9ae7a5d31155"
+            "2fc80470-b68f-4c84-8612-8a2d11e4e72d",
+            "83fc4b26-f0d7-49a6-a0a2-69f997cafd89",
+            "61379be8-bdd9-406d-a0eb-dfca04d76907"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6236,
+          "duration": 6856,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 2,
-    "start": "2025-01-05T03:41:38.946Z",
-    "end": "2025-01-05T03:41:41.983Z",
-    "duration": 3037,
+    "start": "2025-01-05T03:55:19.786Z",
+    "end": "2025-01-05T03:55:22.954Z",
+    "duration": 3168,
     "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b91bda59-dffd-488f-9a21-a5f72a364f3b",
+      "uuid": "d72c9d20-fa52-4157-aef1-baa2a2dcae30",
       "title": "",
       "fullFile": "cypress/e2e/apiTests/GetOneBook.feature",
       "file": "cypress/e2e/apiTests/GetOneBook.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+          "uuid": "cd9e86b1-3777-492c-9eb2-a510d2db16f4",
           "title": "Get a Book",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Successfully retrieve a book by ID as Admin",
               "fullTitle": "Get a Book Successfully retrieve a book by ID as Admin",
               "timedOut": null,
-              "duration": 2806,
+              "duration": 2905,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: expected { Object (id, title, ...) } to deeply equal { Object (id, title, ...) }\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsAdmin.cy.ts:24:34)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": "- { id: 1, title: '', author: 'Updated Author Name' }\n+ { id: 1, title: 'new title', author: null }\n"
               },
-              "uuid": "5840bb6f-02ef-4b99-bcd1-9de4de4a2d4c",
-              "parentUUID": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+              "uuid": "fbaf069c-46d1-4ffc-a40e-794ffc3b363a",
+              "parentUUID": "cd9e86b1-3777-492c-9eb2-a510d2db16f4",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Successfully retrieve a book by ID as User",
               "fullTitle": "Get a Book Successfully retrieve a book by ID as User",
               "timedOut": null,
-              "duration": 143,
+              "duration": 154,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -69,12 +69,12 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {
-                "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=2BA969456B515D162D04E03F59FF93FD; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:41:41 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=2BA969456B515D162D04E03F59FF93FD; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:41:41 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:132748:72)\n    at tryCatcher (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1724:18)\n    at _drainQueueStep (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsUser.cy.ts:10:5)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=94D0F40D1966575F978C8AF7A5F72963; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:55:22 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=94D0F40D1966575F978C8AF7A5F72963; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:55:22 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:132748:72)\n    at tryCatcher (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1724:18)\n    at _drainQueueStep (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsUser.cy.ts:10:5)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
                 "diff": null
               },
-              "uuid": "3d1526c0-01cb-40a4-92bf-564ccc44829b",
-              "parentUUID": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+              "uuid": "0f4da627-cc0e-4819-9e63-aefea5d74bb1",
+              "parentUUID": "cd9e86b1-3777-492c-9eb2-a510d2db16f4",
               "isHook": false,
               "skipped": false
             }
@@ -82,12 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "5840bb6f-02ef-4b99-bcd1-9de4de4a2d4c",
-            "3d1526c0-01cb-40a4-92bf-564ccc44829b"
+            "fbaf069c-46d1-4ffc-a40e-794ffc3b363a",
+            "0f4da627-cc0e-4819-9e63-aefea5d74bb1"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 2949,
+          "duration": 3059,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

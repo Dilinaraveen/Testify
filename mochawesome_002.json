@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:41:14.407Z",
-    "end": "2025-01-05T03:41:17.175Z",
-    "duration": 2768,
+    "start": "2025-01-05T03:54:53.440Z",
+    "end": "2025-01-05T03:54:56.780Z",
+    "duration": 3340,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "58072598-f2e4-4b26-82e9-29611af0f8bc",
+      "uuid": "0f384d94-6308-4ec6-889f-72ba12744612",
       "title": "",
       "fullFile": "cypress/e2e/APITests/DeleteBookUsingAdmin.feature",
       "file": "cypress/e2e/APITests/DeleteBookUsingAdmin.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5fcc80c5-7668-4eaa-a503-0ea7484c65ac",
+          "uuid": "d60c22b8-7a5d-4ea4-a72a-325a597fab4b",
           "title": "Delete a book With Admin Login",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Delete a book using Admin login",
               "fullTitle": "Delete a book With Admin Login Delete a book using Admin login",
               "timedOut": null,
-              "duration": 2736,
+              "duration": 3315,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "854d7990-4c14-4442-ba5c-b9ac2b3a4b80",
-              "parentUUID": "5fcc80c5-7668-4eaa-a503-0ea7484c65ac",
+              "uuid": "4a34a2a8-c5f1-43d6-9f36-1c40786325ef",
+              "parentUUID": "d60c22b8-7a5d-4ea4-a72a-325a597fab4b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "854d7990-4c14-4442-ba5c-b9ac2b3a4b80"
+            "4a34a2a8-c5f1-43d6-9f36-1c40786325ef"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2736,
+          "duration": 3315,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

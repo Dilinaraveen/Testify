@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T03:42:19.570Z",
-    "end": "2025-01-05T03:42:23.160Z",
-    "duration": 3590,
+    "start": "2025-01-05T03:56:03.929Z",
+    "end": "2025-01-05T03:56:07.787Z",
+    "duration": 3858,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0522384e-1ecb-43ba-83dd-595f5e2060ec",
+      "uuid": "c68da18c-390f-4675-a152-05365ce7f8a5",
       "title": "",
       "fullFile": "cypress/e2e/uiTests/Loans/invalidSaving.feature",
       "file": "cypress/e2e/uiTests/Loans/invalidSaving.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a5581023-4cb5-4713-a82d-672183d6f923",
+          "uuid": "f11095be-c9af-4804-aa50-54d3a37d9393",
           "title": "Invalid Saving of Loan Type Form",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Save loan type with missing required field",
               "fullTitle": "Invalid Saving of Loan Type Form Save loan type with missing required field",
               "timedOut": null,
-              "duration": 3536,
+              "duration": 3799,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "a2b49a36-f93b-4caf-a0c6-c203806b2bca",
-              "parentUUID": "a5581023-4cb5-4713-a82d-672183d6f923",
+              "uuid": "76e8c0f6-d396-4e17-a399-36d69840d38b",
+              "parentUUID": "f11095be-c9af-4804-aa50-54d3a37d9393",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a2b49a36-f93b-4caf-a0c6-c203806b2bca"
+            "76e8c0f6-d396-4e17-a399-36d69840d38b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3536,
+          "duration": 3799,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
