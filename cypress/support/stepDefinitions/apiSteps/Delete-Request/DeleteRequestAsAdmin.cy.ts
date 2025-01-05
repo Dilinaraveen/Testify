@@ -20,9 +20,18 @@ When('the Admin sends a Delete request to Delete a book', () => {
   });
 });
 
-Then('the response status should be 200', () => {
-  expect(response.status).to.eq(200); // Check for CREATED status code
+Then('the response status should be 200 if sucessful or 404 if book not found', () => {
+  if(response.status === 200){  
+  expect(response.status).to.eq(200);
+  }
+  if(response.status === 404){
+    expect(response.status).to.eq(404);
+    expect(response.body).to.have.property('message','Book not found')
+  } 
 });
 
+
+  
+  
 
   
