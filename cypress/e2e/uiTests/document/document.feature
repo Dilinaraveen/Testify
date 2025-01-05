@@ -9,3 +9,8 @@ Feature: Document functionality
         Given the user is on document page 
         When the user edit a document type 
         Then it will be shown in table
+
+    Scenario: User delete a document type
+        Given the user is on document page
+        When the user delete a document type
+        Then it will be not shown in table

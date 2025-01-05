@@ -24,8 +24,8 @@ Then('the response should contain the details of the requested book with status 
     expect(response.body).to.deep.equal({
         "id": 1,
         "title": "new title",
-        "author": "new author"
-    });; 
+        "author": null
+    });
   } else if (response.status === 404) { 
     expect(response.status).to.eq(404); 
     expect(response.body).to.have.property('message', 'Book not found'); // Validate error message

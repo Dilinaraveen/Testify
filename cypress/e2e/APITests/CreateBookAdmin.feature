@@ -1,4 +1,4 @@
-Feature: Create a book
+Feature: Admin create a book
   Scenario: Admin successfully create a book
     Given the API endpoint is ready
     When the admin sends a POST request to create a book
