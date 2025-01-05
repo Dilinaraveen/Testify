@@ -86,7 +86,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports
+          publish_dir: ./cypress/reports/merged-report.html
           publish_branch: gh-pages
 
       - name: Make build pass or fail or test results after creating the report
