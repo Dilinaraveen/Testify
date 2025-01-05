@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-05T03:41:38.946Z",
+    "end": "2025-01-05T03:41:41.983Z",
+    "duration": 3037,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b91bda59-dffd-488f-9a21-a5f72a364f3b",
+      "title": "",
+      "fullFile": "cypress/e2e/apiTests/GetOneBook.feature",
+      "file": "cypress/e2e/apiTests/GetOneBook.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+          "title": "Get a Book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully retrieve a book by ID as Admin",
+              "fullTitle": "Get a Book Successfully retrieve a book by ID as Admin",
+              "timedOut": null,
+              "duration": 2806,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected { Object (id, title, ...) } to deeply equal { Object (id, title, ...) }",
+                "estack": "AssertionError: expected { Object (id, title, ...) } to deeply equal { Object (id, title, ...) }\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsAdmin.cy.ts:24:34)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- { id: 1, title: '', author: 'Updated Author Name' }\n+ { id: 1, title: 'new title', author: null }\n"
+              },
+              "uuid": "5840bb6f-02ef-4b99-bcd1-9de4de4a2d4c",
+              "parentUUID": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Successfully retrieve a book by ID as User",
+              "fullTitle": "Get a Book Successfully retrieve a book by ID as User",
+              "timedOut": null,
+              "duration": 143,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=2BA969456B515D162D04E03F59FF93FD; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:41:41 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=2BA969456B515D162D04E03F59FF93FD; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:41:41 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:132748:72)\n    at tryCatcher (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1724:18)\n    at _drainQueueStep (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsUser.cy.ts:10:5)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": null
+              },
+              "uuid": "3d1526c0-01cb-40a4-92bf-564ccc44829b",
+              "parentUUID": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5840bb6f-02ef-4b99-bcd1-9de4de4a2d4c",
+            "3d1526c0-01cb-40a4-92bf-564ccc44829b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2949,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

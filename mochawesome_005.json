@@ -1,0 +1,194 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 2,
+    "pending": 0,
+    "failures": 3,
+    "start": "2025-01-05T03:41:32.171Z",
+    "end": "2025-01-05T03:41:35.670Z",
+    "duration": 3499,
+    "testsRegistered": 5,
+    "passPercent": 40,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "97abd4c2-cf33-4584-9576-5d4c14925de0",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/UpdateBook.feature",
+      "file": "cypress/e2e/APITests/UpdateBook.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+          "title": "Update a Book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully update a book with Admin login",
+              "fullTitle": "Update a Book Successfully update a book with Admin login",
+              "timedOut": null,
+              "duration": 2711,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "c23e2d91-4513-4b83-987c-2283a18abb68",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Attempt to update a non-existent book",
+              "fullTitle": "Update a Book Attempt to update a non-existent book",
+              "timedOut": null,
+              "duration": 143,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "7fbd10eb-452c-4324-bdbb-b8d0f6b23c5e",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Attempt to update a book with an existing name but different ID and author",
+              "fullTitle": "Update a Book Attempt to update a book with an existing name but different ID and author",
+              "timedOut": null,
+              "duration": 157,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 208 to equal 200",
+                "estack": "AssertionError: expected 208 to equal 200\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Put-Request/UpdateBookUsingAdmin.cy.ts:105:42)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 208\n+ 200\n"
+              },
+              "uuid": "2193b95b-eea4-49ec-b092-1e577c6de768",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User attempts to update a book with User login",
+              "fullTitle": "Update a Book User attempts to update a book with User login",
+              "timedOut": null,
+              "duration": 139,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'status')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Delete-Request/DeleteRequestAsUser.cy.ts:23:18)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": null
+              },
+              "uuid": "d556f6e4-c832-4060-9f62-a1ccc0f44afd",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin attempts to update a book with an empty title",
+              "fullTitle": "Update a Book Admin attempts to update a book with an empty title",
+              "timedOut": null,
+              "duration": 155,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 400",
+                "estack": "AssertionError: expected 200 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Put-Request/UpdateBookUsingAdmin.cy.ts:143:35)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 200\n+ 400\n"
+              },
+              "uuid": "9a43ad13-1ea3-42a9-9f9b-3dee25f947ac",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c23e2d91-4513-4b83-987c-2283a18abb68",
+            "7fbd10eb-452c-4324-bdbb-b8d0f6b23c5e"
+          ],
+          "failures": [
+            "2193b95b-eea4-49ec-b092-1e577c6de768",
+            "d556f6e4-c832-4060-9f62-a1ccc0f44afd",
+            "9a43ad13-1ea3-42a9-9f9b-3dee25f947ac"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3305,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

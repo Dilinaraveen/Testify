@@ -1,0 +1,2022 @@
+{
+  "stats": {
+    "suites": 27,
+    "tests": 46,
+    "passes": 35,
+    "pending": 0,
+    "failures": 11,
+    "testsRegistered": 46,
+    "passPercent": 76.08695652173913,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-01-05T03:41:00.188Z",
+    "end": "2025-01-05T03:44:22.948Z",
+    "duration": 202760
+  },
+  "results": [
+    {
+      "uuid": "81b8a892-96fb-4d23-aca5-ebd25dd84ffe",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/CreateBookAdmin.feature",
+      "file": "cypress/e2e/APITests/CreateBookAdmin.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+          "title": "Admin create a book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Admin successfully create a book",
+              "fullTitle": "Admin create a book Admin successfully create a book",
+              "timedOut": null,
+              "duration": 4095,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "286fe657-d6c8-4d8d-98d6-ea515eca70bc",
+              "parentUUID": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin attempt to create the same book again",
+              "fullTitle": "Admin create a book Admin attempt to create the same book again",
+              "timedOut": null,
+              "duration": 191,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "99eb9164-4e14-4932-9237-62a8fb7652e4",
+              "parentUUID": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin attempt to create a book without request body",
+              "fullTitle": "Admin create a book Admin attempt to create a book without request body",
+              "timedOut": null,
+              "duration": 162,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "a893c1f5-9e82-4a80-b9fb-21b5ea015c84",
+              "parentUUID": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin attempt to create a book without mandatory title field",
+              "fullTitle": "Admin create a book Admin attempt to create a book without mandatory title field",
+              "timedOut": null,
+              "duration": 146,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 201 to equal 400",
+                "estack": "AssertionError: expected 201 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/post-request/post-bug.cy.ts:27:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 201\n+ 400\n"
+              },
+              "uuid": "33298ca7-996c-4be6-9d6a-a927afca629a",
+              "parentUUID": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin attempt to create a book without mandatory author field",
+              "fullTitle": "Admin create a book Admin attempt to create a book without mandatory author field",
+              "timedOut": null,
+              "duration": 145,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 201 to equal 400",
+                "estack": "AssertionError: expected 201 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/post-request/post-bug.cy.ts:27:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 201\n+ 400\n"
+              },
+              "uuid": "0f8375bf-f0c8-4b08-be08-468449fb6732",
+              "parentUUID": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin Attempt to create a book with numeric value for author",
+              "fullTitle": "Admin create a book Admin Attempt to create a book with numeric value for author",
+              "timedOut": null,
+              "duration": 145,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 208 to equal 400",
+                "estack": "AssertionError: expected 208 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/post-request/post-bug.cy.ts:27:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 208\n+ 400\n"
+              },
+              "uuid": "ca6ee91d-d937-4a32-96bb-f9f85af8330e",
+              "parentUUID": "1f47eb19-0e9d-42f8-91f0-7725ba01efd5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "286fe657-d6c8-4d8d-98d6-ea515eca70bc",
+            "99eb9164-4e14-4932-9237-62a8fb7652e4",
+            "a893c1f5-9e82-4a80-b9fb-21b5ea015c84"
+          ],
+          "failures": [
+            "33298ca7-996c-4be6-9d6a-a927afca629a",
+            "0f8375bf-f0c8-4b08-be08-468449fb6732",
+            "ca6ee91d-d937-4a32-96bb-f9f85af8330e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4884,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "00cf3521-34f4-4ceb-ba69-8d95b0aa89c6",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/CreateBookUser.feature",
+      "file": "cypress/e2e/APITests/CreateBookUser.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be4c8e31-73a6-44c7-a887-757452da0330",
+          "title": "User create a book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User successfully create a book",
+              "fullTitle": "User create a book User successfully create a book",
+              "timedOut": null,
+              "duration": 2772,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "5451adfa-3467-4012-bec4-8bbbe9a16bea",
+              "parentUUID": "be4c8e31-73a6-44c7-a887-757452da0330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User attempt to create a book without mandatory author field",
+              "fullTitle": "User create a book User attempt to create a book without mandatory author field",
+              "timedOut": null,
+              "duration": 143,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 201 to equal 400",
+                "estack": "AssertionError: expected 201 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/post-request/post-bug.cy.ts:89:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 201\n+ 400\n"
+              },
+              "uuid": "ab6d9073-8c15-4a62-a47b-67416cfab164",
+              "parentUUID": "be4c8e31-73a6-44c7-a887-757452da0330",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5451adfa-3467-4012-bec4-8bbbe9a16bea"
+          ],
+          "failures": [
+            "ab6d9073-8c15-4a62-a47b-67416cfab164"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2915,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "58072598-f2e4-4b26-82e9-29611af0f8bc",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/DeleteBookUsingAdmin.feature",
+      "file": "cypress/e2e/APITests/DeleteBookUsingAdmin.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5fcc80c5-7668-4eaa-a503-0ea7484c65ac",
+          "title": "Delete a book With Admin Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete a book using Admin login",
+              "fullTitle": "Delete a book With Admin Login Delete a book using Admin login",
+              "timedOut": null,
+              "duration": 2736,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "854d7990-4c14-4442-ba5c-b9ac2b3a4b80",
+              "parentUUID": "5fcc80c5-7668-4eaa-a503-0ea7484c65ac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "854d7990-4c14-4442-ba5c-b9ac2b3a4b80"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2736,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5c116314-22a1-415e-98d2-864f75ac9b25",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/DeleteBookUsingUser.feature",
+      "file": "cypress/e2e/APITests/DeleteBookUsingUser.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da135f4a-386e-438b-90b3-91a16b178663",
+          "title": "Delete a book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete a book using User login",
+              "fullTitle": "Delete a book Delete a book using User login",
+              "timedOut": null,
+              "duration": 2915,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 403",
+                "estack": "AssertionError: expected 200 to equal 403\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Delete-Request/DeleteRequestAsUser.cy.ts:23:29)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 200\n+ 403\n"
+              },
+              "uuid": "3b3a06c3-3b88-4681-a343-774d10326393",
+              "parentUUID": "da135f4a-386e-438b-90b3-91a16b178663",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3b3a06c3-3b88-4681-a343-774d10326393"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2915,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ce21034b-c63a-4429-a3d9-8bc86573a7aa",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/GetAllBookList.feature",
+      "file": "cypress/e2e/APITests/GetAllBookList.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9255b2a4-5229-46a3-93ef-15908989aff8",
+          "title": "Get All Book List",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Retrieve all books when no records exist",
+              "fullTitle": "Get All Book List Retrieve all books when no records exist",
+              "timedOut": null,
+              "duration": 2697,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected [ Array(2) ] to be empty",
+                "estack": "AssertionError: expected [ Array(2) ] to be empty\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Get-Request/GetAllBookList.cy.ts:26:60)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": null
+              },
+              "uuid": "9ea5fc8c-1e6e-4280-ae49-bc1caa3378e2",
+              "parentUUID": "9255b2a4-5229-46a3-93ef-15908989aff8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Successfully retrieve all books",
+              "fullTitle": "Get All Book List Successfully retrieve all books",
+              "timedOut": null,
+              "duration": 144,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "5b9ef94c-9c59-4809-92bb-deeb144f864f",
+              "parentUUID": "9255b2a4-5229-46a3-93ef-15908989aff8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5b9ef94c-9c59-4809-92bb-deeb144f864f"
+          ],
+          "failures": [
+            "9ea5fc8c-1e6e-4280-ae49-bc1caa3378e2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2841,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "97abd4c2-cf33-4584-9576-5d4c14925de0",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/UpdateBook.feature",
+      "file": "cypress/e2e/APITests/UpdateBook.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+          "title": "Update a Book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully update a book with Admin login",
+              "fullTitle": "Update a Book Successfully update a book with Admin login",
+              "timedOut": null,
+              "duration": 2711,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "c23e2d91-4513-4b83-987c-2283a18abb68",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Attempt to update a non-existent book",
+              "fullTitle": "Update a Book Attempt to update a non-existent book",
+              "timedOut": null,
+              "duration": 143,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "7fbd10eb-452c-4324-bdbb-b8d0f6b23c5e",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Attempt to update a book with an existing name but different ID and author",
+              "fullTitle": "Update a Book Attempt to update a book with an existing name but different ID and author",
+              "timedOut": null,
+              "duration": 157,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 208 to equal 200",
+                "estack": "AssertionError: expected 208 to equal 200\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Put-Request/UpdateBookUsingAdmin.cy.ts:105:42)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 208\n+ 200\n"
+              },
+              "uuid": "2193b95b-eea4-49ec-b092-1e577c6de768",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User attempts to update a book with User login",
+              "fullTitle": "Update a Book User attempts to update a book with User login",
+              "timedOut": null,
+              "duration": 139,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'status')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Delete-Request/DeleteRequestAsUser.cy.ts:23:18)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": null
+              },
+              "uuid": "d556f6e4-c832-4060-9f62-a1ccc0f44afd",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin attempts to update a book with an empty title",
+              "fullTitle": "Update a Book Admin attempts to update a book with an empty title",
+              "timedOut": null,
+              "duration": 155,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 400",
+                "estack": "AssertionError: expected 200 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/Put-Request/UpdateBookUsingAdmin.cy.ts:143:35)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 200\n+ 400\n"
+              },
+              "uuid": "9a43ad13-1ea3-42a9-9f9b-3dee25f947ac",
+              "parentUUID": "bfd19285-91d8-4bde-8777-959bbf9dc510",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c23e2d91-4513-4b83-987c-2283a18abb68",
+            "7fbd10eb-452c-4324-bdbb-b8d0f6b23c5e"
+          ],
+          "failures": [
+            "2193b95b-eea4-49ec-b092-1e577c6de768",
+            "d556f6e4-c832-4060-9f62-a1ccc0f44afd",
+            "9a43ad13-1ea3-42a9-9f9b-3dee25f947ac"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3305,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b91bda59-dffd-488f-9a21-a5f72a364f3b",
+      "title": "",
+      "fullFile": "cypress/e2e/apiTests/GetOneBook.feature",
+      "file": "cypress/e2e/apiTests/GetOneBook.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+          "title": "Get a Book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully retrieve a book by ID as Admin",
+              "fullTitle": "Get a Book Successfully retrieve a book by ID as Admin",
+              "timedOut": null,
+              "duration": 2806,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected { Object (id, title, ...) } to deeply equal { Object (id, title, ...) }",
+                "estack": "AssertionError: expected { Object (id, title, ...) } to deeply equal { Object (id, title, ...) }\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsAdmin.cy.ts:24:34)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- { id: 1, title: '', author: 'Updated Author Name' }\n+ { id: 1, title: 'new title', author: null }\n"
+              },
+              "uuid": "5840bb6f-02ef-4b99-bcd1-9de4de4a2d4c",
+              "parentUUID": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Successfully retrieve a book by ID as User",
+              "fullTitle": "Get a Book Successfully retrieve a book by ID as User",
+              "timedOut": null,
+              "duration": 143,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=2BA969456B515D162D04E03F59FF93FD; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:41:41 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:7081/api/books/1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:7081/api/books/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Basic dXNlcjpwYXNzd29yZA==\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.16.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"set-cookie\": [\n    \"JSESSIONID=2BA969456B515D162D04E03F59FF93FD; Path=/; HttpOnly\"\n  ],\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\",\n  \"x-frame-options\": \"DENY\",\n  \"content-type\": \"text/plain;charset=UTF-8\",\n  \"content-length\": \"22\",\n  \"date\": \"Sun, 05 Jan 2025 03:41:41 GMT\",\n  \"keep-alive\": \"timeout=60\",\n  \"connection\": \"keep-alive\"\n}\nBody: User is not permitted.\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:132748:72)\n    at tryCatcher (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:1724:18)\n    at _drainQueueStep (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://icehrmpro.gamonoid.com/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/get-request/getOneBookAsUser.cy.ts:10:5)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": null
+              },
+              "uuid": "3d1526c0-01cb-40a4-92bf-564ccc44829b",
+              "parentUUID": "1db5f9ce-3cc3-43cb-9c0c-fe27a908ab30",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5840bb6f-02ef-4b99-bcd1-9de4de4a2d4c",
+            "3d1526c0-01cb-40a4-92bf-564ccc44829b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2949,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2d22ffad-87dc-427f-b7f3-4a9ccabf3dca",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Attendence/AddNewBtn.feature",
+      "file": "cypress/e2e/uiTests/Attendence/AddNewBtn.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "646da268-dbd1-45b6-ad8b-4af5f9c2d794",
+          "title": "Functionality of Add new Button Click",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open the Add New popup When AddNew Button click",
+              "fullTitle": "Functionality of Add new Button Click Open the Add New popup When AddNew Button click",
+              "timedOut": null,
+              "duration": 3351,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "a148e00f-d56d-49b2-b32e-4c6335558e29",
+              "parentUUID": "646da268-dbd1-45b6-ad8b-4af5f9c2d794",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a148e00f-d56d-49b2-b32e-4c6335558e29"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3351,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a42a3a88-c73b-4cd0-b42c-7b6f4f694147",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Attendence/CheckAttendenceVisible.feature",
+      "file": "cypress/e2e/uiTests/Attendence/CheckAttendenceVisible.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a982de36-392d-4513-a0cb-2919d207bcdb",
+          "title": "Functionality of Manage Drop Down",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open the Manage Drop dwon when user click on it",
+              "fullTitle": "Functionality of Manage Drop Down Open the Manage Drop dwon when user click on it",
+              "timedOut": null,
+              "duration": 3927,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "5fd53edc-21ca-4ebc-a219-bf91a1eab573",
+              "parentUUID": "a982de36-392d-4513-a0cb-2919d207bcdb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5fd53edc-21ca-4ebc-a219-bf91a1eab573"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3927,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "56b098c5-c0d1-4568-8c14-4a289954df8f",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Attendence/CheckValidationOfAddNewData.feature",
+      "file": "cypress/e2e/uiTests/Attendence/CheckValidationOfAddNewData.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b23b56dd-314f-406c-ad31-3c75df4a76f3",
+          "title": "Alert When Empty Text Box Present",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Show Alert when user click save with empty Text Boxes",
+              "fullTitle": "Alert When Empty Text Box Present Show Alert when user click save with empty Text Boxes",
+              "timedOut": null,
+              "duration": 3770,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "222992a4-3036-4046-b101-09db159bed68",
+              "parentUUID": "b23b56dd-314f-406c-ad31-3c75df4a76f3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "222992a4-3036-4046-b101-09db159bed68"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3770,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "87bc5e4e-02f2-43e1-b5f9-ee4a3b32e5a3",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Attendence/FilterButtonFunctionality.feature",
+      "file": "cypress/e2e/uiTests/Attendence/FilterButtonFunctionality.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6d3f688a-c22e-4afe-a446-848ff49fe659",
+          "title": "Check Functionality of Filter Button",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User choose an Employee to Filter data",
+              "fullTitle": "Check Functionality of Filter Button User choose an Employee to Filter data",
+              "timedOut": null,
+              "duration": 3670,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "fc24ffe4-f65c-429f-8e9a-eff5b392dd2f",
+              "parentUUID": "6d3f688a-c22e-4afe-a446-848ff49fe659",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fc24ffe4-f65c-429f-8e9a-eff5b392dd2f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3670,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "af44f664-fe03-4b71-8341-dfbef814807d",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Loans/deleteLoanTypeRecord.feature",
+      "file": "cypress/e2e/uiTests/Loans/deleteLoanTypeRecord.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "447dd78c-f208-45ba-b642-6d040b92dd6d",
+          "title": "Delete Loan Type Record",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully delete a loan type record",
+              "fullTitle": "Delete Loan Type Record Successfully delete a loan type record",
+              "timedOut": null,
+              "duration": 4576,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "ee093b36-f750-4144-b7a1-814da40bd966",
+              "parentUUID": "447dd78c-f208-45ba-b642-6d040b92dd6d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ee093b36-f750-4144-b7a1-814da40bd966"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4576,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0522384e-1ecb-43ba-83dd-595f5e2060ec",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Loans/invalidSaving.feature",
+      "file": "cypress/e2e/uiTests/Loans/invalidSaving.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a5581023-4cb5-4713-a82d-672183d6f923",
+          "title": "Invalid Saving of Loan Type Form",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Save loan type with missing required field",
+              "fullTitle": "Invalid Saving of Loan Type Form Save loan type with missing required field",
+              "timedOut": null,
+              "duration": 3536,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "a2b49a36-f93b-4caf-a0c6-c203806b2bca",
+              "parentUUID": "a5581023-4cb5-4713-a82d-672183d6f923",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a2b49a36-f93b-4caf-a0c6-c203806b2bca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3536,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "aa359d30-4d1c-40bd-b783-05edd03eda46",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/Loans/loanTypeAddNewButton.feature",
+      "file": "cypress/e2e/uiTests/Loans/loanTypeAddNewButton.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "637161c4-f8ef-4ee8-bc4f-482da61fc052",
+          "title": "Validation of 'Add New' Button on Loan Type Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User clicks the 'Add New' button",
+              "fullTitle": "Validation of 'Add New' Button on Loan Type Page User clicks the 'Add New' button",
+              "timedOut": null,
+              "duration": 3360,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "bb304223-c455-4b69-ad49-2780947ed258",
+              "parentUUID": "637161c4-f8ef-4ee8-bc4f-482da61fc052",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bb304223-c455-4b69-ad49-2780947ed258"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3360,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "085f8924-ffc4-4f47-9842-a5eb342d96d5",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/document/document.feature",
+      "file": "cypress/e2e/uiTests/document/document.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+          "title": "Document functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User create a document type",
+              "fullTitle": "Document functionality User create a document type",
+              "timedOut": null,
+              "duration": 4156,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "4c3b8ecf-e604-41d5-af61-b6aa6dc28a1d",
+              "parentUUID": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User edit a document type",
+              "fullTitle": "Document functionality User edit a document type",
+              "timedOut": null,
+              "duration": 1100,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "c4845821-f7ce-4a51-85eb-bead74924cd3",
+              "parentUUID": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User delete a document type",
+              "fullTitle": "Document functionality User delete a document type",
+              "timedOut": null,
+              "duration": 1978,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "9c733d49-6104-461b-9795-de503b4d63a9",
+              "parentUUID": "aa366c11-f7aa-4acb-945b-f3fb971acbb0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4c3b8ecf-e604-41d5-af61-b6aa6dc28a1d",
+            "c4845821-f7ce-4a51-85eb-bead74924cd3",
+            "9c733d49-6104-461b-9795-de503b4d63a9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7234,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0e0800cf-de4e-41e4-825c-99c4aaef6bd2",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/expenses/Expenses.feature",
+      "file": "cypress/e2e/uiTests/expenses/Expenses.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+          "title": "Expenses functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User create a new expense type",
+              "fullTitle": "Expenses functionality User create a new expense type",
+              "timedOut": null,
+              "duration": 5830,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "4874f4b1-59a2-47a7-8cb9-8e29e1733fb9",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User edit newly created expense type",
+              "fullTitle": "Expenses functionality User edit newly created expense type",
+              "timedOut": null,
+              "duration": 4007,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "65568a35-228f-4a71-8c30-fb71dc5f4148",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User delete newly created expense type",
+              "fullTitle": "Expenses functionality User delete newly created expense type",
+              "timedOut": null,
+              "duration": 3611,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "8a1f562c-ad6e-4b2a-b21b-a3b69129a847",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User filter records by expense type",
+              "fullTitle": "Expenses functionality User filter records by expense type",
+              "timedOut": null,
+              "duration": 1995,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "59a77252-2519-4280-8cc4-263f91c53631",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4874f4b1-59a2-47a7-8cb9-8e29e1733fb9",
+            "65568a35-228f-4a71-8c30-fb71dc5f4148",
+            "8a1f562c-ad6e-4b2a-b21b-a3b69129a847",
+            "59a77252-2519-4280-8cc4-263f91c53631"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15443,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "710f019e-b1b9-4c14-b1c7-640691240b8d",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/leave/addNewLeaveTypeValidation.feature",
+      "file": "cypress/e2e/uiTests/leave/addNewLeaveTypeValidation.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "015ab193-5d37-4971-a614-ed6cddb501b1",
+          "title": "Add New Leave Type Validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User attempts to add a new leave type without filling in required fields",
+              "fullTitle": "Add New Leave Type Validation User attempts to add a new leave type without filling in required fields",
+              "timedOut": null,
+              "duration": 4071,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "12f14a0e-72fc-430b-bbfb-d054d77b5ff7",
+              "parentUUID": "015ab193-5d37-4971-a614-ed6cddb501b1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "12f14a0e-72fc-430b-bbfb-d054d77b5ff7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4071,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6047bd33-7212-42c6-94cb-c885c41deeb1",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/leave/editLeaveType.feature",
+      "file": "cypress/e2e/uiTests/leave/editLeaveType.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "793c2e6f-7d4f-4705-832d-034777ce6e5e",
+          "title": "Edit LeaveType",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User selects the leave type and edit the leave type",
+              "fullTitle": "Edit LeaveType User selects the leave type and edit the leave type",
+              "timedOut": null,
+              "duration": 5897,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "2c128657-da15-4c20-aff8-a66a9cff2218",
+              "parentUUID": "793c2e6f-7d4f-4705-832d-034777ce6e5e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2c128657-da15-4c20-aff8-a66a9cff2218"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5897,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f61e2807-a696-4d26-bcda-157384ec932f",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/leave/filtersModalOpen.feature",
+      "file": "cypress/e2e/uiTests/leave/filtersModalOpen.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0f14430b-bd85-4bab-b054-8e29572b19e9",
+          "title": "Filter Leave Types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open the \"Filter\" modal and verify its header",
+              "fullTitle": "Filter Leave Types Open the \"Filter\" modal and verify its header",
+              "timedOut": null,
+              "duration": 3556,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "446ed060-6687-4420-8340-c05cc11b1c94",
+              "parentUUID": "0f14430b-bd85-4bab-b054-8e29572b19e9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "446ed060-6687-4420-8340-c05cc11b1c94"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6dc43cd0-e549-4b27-8282-1fd6b0ecc955",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/leave/leavePageLoadSuccess.feature",
+      "file": "cypress/e2e/uiTests/leave/leavePageLoadSuccess.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d672e4bb-222d-48dc-bbef-9b6165a3ebaf",
+          "title": "Leave Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User views the Leave page",
+              "fullTitle": "Leave Management User views the Leave page",
+              "timedOut": null,
+              "duration": 4351,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "d613a4f9-2429-47fd-aa03-5d37a66270c9",
+              "parentUUID": "d672e4bb-222d-48dc-bbef-9b6165a3ebaf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d613a4f9-2429-47fd-aa03-5d37a66270c9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4351,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5906dc76-359f-4a30-b20c-f055bd7a3eed",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/leave/leaveTypeModalOpen.feature",
+      "file": "cypress/e2e/uiTests/leave/leaveTypeModalOpen.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "575c59d3-654b-4907-beab-e916ea37d033",
+          "title": "Add Leave Type Modal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully open the \"LeaveType\" modal when the \"Add New\" button is clicked",
+              "fullTitle": "Add Leave Type Modal Successfully open the \"LeaveType\" modal when the \"Add New\" button is clicked",
+              "timedOut": null,
+              "duration": 3425,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "a0e216e5-4fba-46ac-80bf-96e91080d22d",
+              "parentUUID": "575c59d3-654b-4907-beab-e916ea37d033",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0e216e5-4fba-46ac-80bf-96e91080d22d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3425,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3158c51b-34b7-4ac3-878c-41a302b824d0",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/leave/searchLeaveType.feature",
+      "file": "cypress/e2e/uiTests/leave/searchLeaveType.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e0233c7b-55c6-495a-a184-7c80f8d474cf",
+          "title": "Search Leave Type",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Search for \"Annual Leave\" in the search bar",
+              "fullTitle": "Search Leave Type Search for \"Annual Leave\" in the search bar",
+              "timedOut": null,
+              "duration": 3885,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "a6a12299-9d33-4f45-879a-a19df7344c01",
+              "parentUUID": "e0233c7b-55c6-495a-a184-7c80f8d474cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a6a12299-9d33-4f45-879a-a19df7344c01"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3885,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9244dc95-f2f4-4282-bb7b-19d60bc3951e",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/login/Login.feature",
+      "file": "cypress/e2e/uiTests/login/Login.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+          "title": "Login functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User logs in to the system Successfully",
+              "fullTitle": "Login functionality User logs in to the system Successfully",
+              "timedOut": null,
+              "duration": 2595,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "4286250e-76c4-4976-876d-933f0f01436d",
+              "parentUUID": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User fails to logs in to the system",
+              "fullTitle": "Login functionality User fails to logs in to the system",
+              "timedOut": null,
+              "duration": 1046,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "000ce76c-18b0-438c-ac79-cfd5c12c1ac8",
+              "parentUUID": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User logs out of the the system Successfully",
+              "fullTitle": "Login functionality User logs out of the the system Successfully",
+              "timedOut": null,
+              "duration": 2595,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "9106101c-cfed-4342-af4e-9ae7a5d31155",
+              "parentUUID": "f7eb73cc-9a4b-4b5f-8466-5bf7f1223799",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4286250e-76c4-4976-876d-933f0f01436d",
+            "000ce76c-18b0-438c-ac79-cfd5c12c1ac8",
+            "9106101c-cfed-4342-af4e-9ae7a5d31155"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6236,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "161ebdc6-1f52-40f6-8e24-0695bde0215f",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/training/addNewCourseValidation.feature",
+      "file": "cypress/e2e/uiTests/training/addNewCourseValidation.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "360305d3-2bfc-4fb5-a342-851fab28040c",
+          "title": "Add New Course Validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User attempts to add a new course without filling in required fields",
+              "fullTitle": "Add New Course Validation User attempts to add a new course without filling in required fields",
+              "timedOut": null,
+              "duration": 4223,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "b86db863-8174-4bb9-970d-60d62070f499",
+              "parentUUID": "360305d3-2bfc-4fb5-a342-851fab28040c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b86db863-8174-4bb9-970d-60d62070f499"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4223,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ef889456-9cf6-4014-b763-63d2b6e077d9",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/training/editCourse.feature",
+      "file": "cypress/e2e/uiTests/training/editCourse.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3e69214b-f42f-4d15-a9ec-665e063944eb",
+          "title": "Edit Course",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User selects the first course and opens the edit modal",
+              "fullTitle": "Edit Course User selects the first course and opens the edit modal",
+              "timedOut": null,
+              "duration": 5720,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "6cd4b01c-aa82-4406-9813-1574a9d67cff",
+              "parentUUID": "3e69214b-f42f-4d15-a9ec-665e063944eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6cd4b01c-aa82-4406-9813-1574a9d67cff"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5720,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e13b7b1b-701e-4788-88b7-adc50c3ddb25",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/training/openCoursesModal.feature",
+      "file": "cypress/e2e/uiTests/training/openCoursesModal.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ed40ba3a-1f05-47fc-a857-99070c888451",
+          "title": "Open Courses Modal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User opens the Courses modal by clicking the Add New button",
+              "fullTitle": "Open Courses Modal User opens the Courses modal by clicking the Add New button",
+              "timedOut": null,
+              "duration": 3525,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "c344906a-364f-48c8-bb5f-4ce0a0ae9b44",
+              "parentUUID": "ed40ba3a-1f05-47fc-a857-99070c888451",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c344906a-364f-48c8-bb5f-4ce0a0ae9b44"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3525,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6d0f043d-d77f-448b-a805-994f96240868",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/training/searchCourses.feature",
+      "file": "cypress/e2e/uiTests/training/searchCourses.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d209f096-c17c-439f-81f5-94645de84cba",
+          "title": "Search for courses",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User searches for \"Info Marketing\" courses",
+              "fullTitle": "Search for courses User searches for \"Info Marketing\" courses",
+              "timedOut": null,
+              "duration": 3676,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "320366be-e6b7-4512-b6bc-c9636a81cd24",
+              "parentUUID": "d209f096-c17c-439f-81f5-94645de84cba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "320366be-e6b7-4512-b6bc-c9636a81cd24"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3676,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

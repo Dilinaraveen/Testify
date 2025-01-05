@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-05T03:42:43.066Z",
+    "end": "2025-01-05T03:42:59.074Z",
+    "duration": 16008,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0e0800cf-de4e-41e4-825c-99c4aaef6bd2",
+      "title": "",
+      "fullFile": "cypress/e2e/uiTests/expenses/Expenses.feature",
+      "file": "cypress/e2e/uiTests/expenses/Expenses.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+          "title": "Expenses functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User create a new expense type",
+              "fullTitle": "Expenses functionality User create a new expense type",
+              "timedOut": null,
+              "duration": 5830,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "4874f4b1-59a2-47a7-8cb9-8e29e1733fb9",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User edit newly created expense type",
+              "fullTitle": "Expenses functionality User edit newly created expense type",
+              "timedOut": null,
+              "duration": 4007,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "65568a35-228f-4a71-8c30-fb71dc5f4148",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User delete newly created expense type",
+              "fullTitle": "Expenses functionality User delete newly created expense type",
+              "timedOut": null,
+              "duration": 3611,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "8a1f562c-ad6e-4b2a-b21b-a3b69129a847",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User filter records by expense type",
+              "fullTitle": "Expenses functionality User filter records by expense type",
+              "timedOut": null,
+              "duration": 1995,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "59a77252-2519-4280-8cc4-263f91c53631",
+              "parentUUID": "7956c4e0-8ab5-4dd2-998c-29aead81a1e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4874f4b1-59a2-47a7-8cb9-8e29e1733fb9",
+            "65568a35-228f-4a71-8c30-fb71dc5f4148",
+            "8a1f562c-ad6e-4b2a-b21b-a3b69129a847",
+            "59a77252-2519-4280-8cc4-263f91c53631"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15443,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

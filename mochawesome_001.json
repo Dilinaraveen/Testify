@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-05T03:41:08.426Z",
+    "end": "2025-01-05T03:41:11.418Z",
+    "duration": 2992,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "00cf3521-34f4-4ceb-ba69-8d95b0aa89c6",
+      "title": "",
+      "fullFile": "cypress/e2e/APITests/CreateBookUser.feature",
+      "file": "cypress/e2e/APITests/CreateBookUser.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be4c8e31-73a6-44c7-a887-757452da0330",
+          "title": "User create a book",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User successfully create a book",
+              "fullTitle": "User create a book User successfully create a book",
+              "timedOut": null,
+              "duration": 2772,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "5451adfa-3467-4012-bec4-8bbbe9a16bea",
+              "parentUUID": "be4c8e31-73a6-44c7-a887-757452da0330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User attempt to create a book without mandatory author field",
+              "fullTitle": "User create a book User attempt to create a book without mandatory author field",
+              "timedOut": null,
+              "duration": 143,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: expected 201 to equal 400",
+                "estack": "AssertionError: expected 201 to equal 400\n    at Context.eval (cypress/support/stepDefinitions/apiSteps/post-request/post-bug.cy.ts:89:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)",
+                "diff": "- 201\n+ 400\n"
+              },
+              "uuid": "ab6d9073-8c15-4a62-a47b-67416cfab164",
+              "parentUUID": "be4c8e31-73a6-44c7-a887-757452da0330",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5451adfa-3467-4012-bec4-8bbbe9a16bea"
+          ],
+          "failures": [
+            "ab6d9073-8c15-4a62-a47b-67416cfab164"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2915,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
