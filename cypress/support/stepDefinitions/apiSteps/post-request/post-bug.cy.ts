@@ -68,3 +68,23 @@ When('the admin sends a POST request with author as numeric value', () => {
 Then('the admin should be bad request', () => {
     expect(response.status).to.eq(400); // Check for BAD REQUEST status code
 });
+
+When('the user sends a POST request without title to create a book', () => {
+    cy.request({
+        method: 'POST',
+        url: `${Cypress.env('API_URL')}/api/books`, // API endpoint
+        headers: {
+            Authorization: Cypress.env('API_AUTHORIZATION_USER'), // Basic auth header
+        },
+        body: {
+            author: 'cypress1',
+        },
+        failOnStatusCode: false
+    }).then((res) => {
+        response = res;
+    });
+});
+
+Then('the user response should be bad request', () => {
+    expect(response.status).to.eq(400); // Check for BAD REQUEST status code
+});
