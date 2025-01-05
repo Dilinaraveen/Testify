@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    "types": ["cypress"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": "./"
+  },
+  "include": [
+    "cypress/**/*.ts"
+  ]
+}
