@@ -13,6 +13,7 @@ When('the user enters a valid username and password and press login', () => {
   loginPageObject.signin(Cypress.env('LOGIN_USERNAME'), Cypress.env('LOGIN_PASSWORD'));
 });
 
+
 Then('the user should be redirected to the dashboard', () => {
   cy.get(DASHBOARD_NAVIGATION_BAR).should('contain', 'Dashboard');
 });
