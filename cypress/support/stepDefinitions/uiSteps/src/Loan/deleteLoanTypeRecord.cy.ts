@@ -36,5 +36,5 @@ When('the user clicks the Delete button', () => {
 });
 
 Then('the loan type record {string} should no longer exist', (loanTypeName) => {
-  cy.contains('tr', loanTypeName).should('not.exist');
+  cy.contains('Personal loan').should('not.exist');
 });
